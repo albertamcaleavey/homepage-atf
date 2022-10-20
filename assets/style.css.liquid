@@ -1712,6 +1712,17 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
 #homepage-atf, #homepage-full-assortment {
   overflow: scroll;
   white-space: nowrap;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+#homepage-atf::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+#homepage-full-assortment::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 #homepage-atf > div {
   background-image: url("{{ 'placeholder.png' | asset_img_url }}");
@@ -1722,7 +1733,7 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   flex-direction: column;
   justify-content: space-between;
   white-space: normal;
-  max-width: 500px;
+  /* max-width: 500px; */
   max-height: 500px;
 }
 #homepage-full-assortment > div {
@@ -1737,6 +1748,19 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   max-width: 250px;
   max-height: 250px;
 }
+@media only screen and (min-width: 800px) {
+  #homepage-atf > div {
+    width: 33.3%;
+    margin: 0;
+    border-radius: 0;
+  }
+  #homepage-atf > div > div {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #homepage-atf { padding: 15px; }
+}
 @media only screen and (max-width: 1079px) {
   #homepage-atf > div {
     height: 300px;
@@ -1749,7 +1773,7 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
 }
 @media only screen and (min-width: 1080px) {
   #homepage-atf > div {
-    width: 30vw;
+    /* width: 30vw; */
     height: 30vw;
   }
   #homepage-full-assortment > div {
