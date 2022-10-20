@@ -30,7 +30,8 @@
 body {
     margin: 0;
 }
-main {     overflow-x:  clip;
+main {     
+  overflow-x:  clip;
  }
  .klaviyo-form p span { font-family: "Lexend" !important; }
  .klaviyo-form button, .klaviyo-form strong { font-family: "Avenir-Next-Condensed" !important; }
@@ -1703,27 +1704,71 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   z-index: 999;
 }
 
-.tdu { text-decoration: underline;}
+.tdu { text-decoration: underline; }
+
+.flex-container-md { display: flex }
 
 /* HOMEPAGE ATF */
+#homepage-atf, #homepage-full-assortment {
+  overflow: scroll;
+  white-space: nowrap;
+}
 #homepage-atf > div {
   background-image: url("{{ 'placeholder.png' | asset_img_url }}");
-  background-size: cover;
-  margin: 10px;
+  background-size: contain;
   border-radius: 10px;
-  height: 30vw;
-  width: 30vw;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: normal;
+  max-width: 500px;
+  max-height: 500px;
 }
-
 #homepage-full-assortment > div {
   background-image: url("{{ 'placeholder.png' | asset_img_url }}");
-  background-size: cover;
+  background-size: contain;
   margin: 5px;
   border-radius: 10px;
-  height: 15vw;
-  width: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: normal;
+  max-width: 250px;
+  max-height: 250px;
+}
+@media only screen and (max-width: 1079px) {
+  #homepage-atf > div {
+    height: 300px;
+    min-width: 300px;
+  }
+  #homepage-full-assortment > div {
+    height: 150px;
+    min-width: 150px;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  #homepage-atf > div {
+    width: 30vw;
+    height: 30vw;
+  }
+  #homepage-full-assortment > div {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #homepage-atf > div > h3 {
+    font-size: 2.2rem;
+  }
+  #homepage-atf > div > div > a > p {
+    font-size: 1rem;
+  }
+  .assortment-txt {
+    font-size: 2.2rem;
+  }
+  #homepage-full-assortment > div > a > p  {
+    font-size: 1.3rem;
+  }
 }
 
