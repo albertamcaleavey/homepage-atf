@@ -1,0 +1,50 @@
+
+
+<div class="postpurchase" style="display: none;">
+  <div class="close" style="cursor:pointer;" onclick=" ga('send', 'event', 'Referral Source', 'Closed', clickCount)">✕</div>
+  <div class="flex-container-no tac">
+    <div>
+      <h2 class="ttu tac">How Did You Hear About Us?</h2>
+ <ul id="post-purchase-stores"class="tac">
+        <li id="facebook" onclick="ga('send', 'event', 'Referral Source', 'Facebook');"><p>Facebook</p></li>
+        <li id="instagram" onclick="ga('send', 'event', 'Referral Source', 'Instagram');"><p>Instagram</p></li>
+        <li id="search-engine" onclick="ga('send', 'event', 'Referral Source', 'Search Engine');"><p>Google / Bing</p></li>
+        <li id="friend" onclick="ga('send', 'event', 'Referral Source', 'Friend or Family');"><p>Friend or Family</p></li>
+        <li id="banner" onclick="ga('send', 'event', 'Referral Source', 'Banner Ad');"><p>Banner Ad</p></li>
+        <li id="radio" onclick="ga('send', 'event', 'Referral Source', 'Radio / Digital Radio');"><p>Radio / Digital Radio</p></li>
+        <li id="mailer" onclick="ga('send', 'event', 'Referral Source', 'In Home Mailer');"><p>In Home Mailer</p></li>
+        <li id="tiktok" onclick="ga('send', 'event', 'Referral Source', 'TikTok');"><p>TikTok</p></li>
+           <li id="youtube" onclick="ga('send', 'event', 'Referral Source', 'YouTube');"><p>YouTube</p></li>
+
+        <li id="other" onclick="ga('send', 'event', 'Referral Source', 'Other');"><p>Other</p></li>
+      </ul>
+    </div>
+   
+  </div>
+</div>
+
+ <script>
+  $('.postpurchase #post-purchase-stores li').click(function() {
+    $('.postpurchase').hide(); 
+
+    }  ); 
+  $('.close').click(function(){
+    $('.postpurchase').hide(); 
+  }); 
+
+</script>
+<script>
+// var ul = document.querySelector('#post-purchase-list');
+// for (var i = ul.children.length; i >= 0; i--) {
+//     ul.appendChild(ul.children[Math.random() * i | 0]);
+// }
+var ul = document.querySelector('#post-purchase-stores');
+for (var i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+}
+</script>
+
+<style>
+     .referral-selected {background: #6DCDB8;}
+
+</style>

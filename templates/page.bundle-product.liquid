@@ -1,0 +1,95 @@
+    <main id="page">	     
+        <section class="index-padding">
+          <div class="background-teal accent-padding">
+            <h2 class="tac ttu nm" id="bundle-title"></h2>
+            <div class="bundle-breadcrumbs">
+              <div class="item-crumb active"><h3 class="nm">1.</h3></div>
+              <div class="item-crumb"><h3 class="nm">2.</h3></div>
+              <div class="item-crumb"><h3 class="nm">3.</h3></div>
+              <div class="item-crumb"><h3 class="nm">4.</h3></div>
+            </div>
+          </div>
+    
+          {% for product in collections.all.products %}
+            {% if product.id == 4837733957732 %}
+              <div class="bundle-product-wrapper" id="bundle-3-crew">
+              {% include 'product-form-bundle' %}
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for product in collections.all.products %}
+            {% if product.id == 6609169776740 %}
+              <div class="bundle-product-wrapper" id="bundle-2-light-weight-crew" style="display: none;">
+              {% include 'product-form-bundle' %}
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for product in collections.all.products %}
+            {% if product.id == 4823040131172 %}
+              <div class="bundle-product-wrapper" id="bundle-3-low-cut" style="display: none;">
+              {% include 'product-form-bundle' %}
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for product in collections.all.products %}
+            {% if product.id == 6585673187428 %}
+              <div class="bundle-product-wrapper" id="bundle-3-no-show" style="display: none;">
+              {% include 'product-form-bundle' %}
+              </div>
+            {% endif %}
+          {% endfor %}
+	    </section>
+    </main>
+    <style>
+      .bundle-breadcrumbs {
+        display: flex;
+        width: 100%;
+        align-items: center; 
+        justify-content: center
+      }
+      
+      .item-crumb { margin: 0 5px;}
+      .item-crumb.active h3 { color: #be1f24;}
+
+      .add-to-bundle h4{
+    width: 100%;
+    text-align: center;
+    font-size: 2vw;
+    line-height: 50px;
+}
+    </style>
+
+    <script>
+      // function to analyze url params
+      var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+  
+          if (sParameterName[0] === sParam) {
+              return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+          }
+      }
+      return false;
+      };
+
+      // stores values of url params as variable
+      var box = getUrlParameter('box').replace(/-/g, ' ');
+      var item1 = getUrlParameter('item1');
+      var item2 = getUrlParameter('item2');
+      var item3 = getUrlParameter('item3');
+
+      // adds in the bundle title
+      $('#bundle-title').text(box)
+
+      // swaps to next item on selection
+      $('.add-to-bundle').click(function() {
+        console.log('add to bundle')
+        $(this).closest('.bundle-product-wrapper').hide().next('.bundle-product-wrapper').show();
+        $('.item-crumb.active').removeClass('active').next('.item-crumb').addClass('active')
+      })
+    </script>

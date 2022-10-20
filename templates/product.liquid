@@ -1,0 +1,209 @@
+<main id="product" class="background-white" itemscope itemtype="http://schema.org/Product">
+  
+  {% if product.title contains "Summer" or product.title contains "Throw Blanket" or product.title contains "Sweater" or product.title contains 'Scarf'%}
+ 
+    {% include 'product-form-new' %}
+    <p class="product-type" style="display: none">Accessory</p>
+  {% else %}
+    {% include 'product-form-old' %}
+    <p class="product-type" style="display: none">Sock</p>
+  {% endif %}
+  {%  unless product.title contains "Throw" or product.title contains "Gift Card" %}
+    <style>
+    @media only screen and (max-width: 799px) {
+      #purchase-help { width: 100%; margin-bottom:  50px;}
+      }
+</style>
+    {%  endunless %}
+  <svg xmlns="http://www.w3.org/2000/svg" class="product-topper" viewBox="0 0 1440 320"><path fill="#afbde1" fill-opacity="1" d="M0,224L40,224C80,224,160,224,240,197.3C320,171,400,117,480,128C560,139,640,213,720,229.3C800,245,880,203,960,176C1040,149,1120,139,1200,160C1280,181,1360,235,1400,261.3L1440,288L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z" ></path></svg>  
+    
+
+
+
+<script>
+  // if throw or wrap change care text
+    $(document).ready(function() {
+      let shipping = "Shipping normally takes between 2 - 5 business days. If you feel that your order has been held up or delayed in processing, just email us! We are happy to get to the bottom of it for you and can resolve most shipping issues on your behalf. Returns are always on us."
+      let sockCare = "When it’s time to wash your socks, you can add them to the washing machine with like colors. Make sure to run your socks on the gentle cycle with cold water to prevent any damage, tumble dry."
+      let accessoryCare = "Dry clean only."
+ //      let descStart = 'The newest addition to the Pacas family, these light weight, super versatile summer wraps are perfect for cool summer evenings or to simply add a little something extra to your outfit! <br> <br>'
+ //      let descEnd = 'It comes in five gorgeous colors and is super soft and luxurious yet airy and light. <br> <br> Composition: 70% alpaca, 30% silk<br> Size: 24in X 58in</p>'
+ //      let throwDesc = "Made from the softest alpaca, this comfy throw blanket is a must for any and every room. Alpaca wool is hypoallergenic, so this throw is ideal for those with allergies or sensitive skin."
+ //      let description = ''               
+	// {% case product.title %}
+ //  		{% when "Light-Weight / Summer Wrap - Double Side Solid" %}
+	// 		description = descStart.concat('The Double Side Solid is an elevated version of the solid scarf – it \'s easy to wear but is an interesting addition to your wardrobe.', " ", descEnd)
+	// 	{% when "Light-Weight / Summer Wrap - Multi Plaid" %}
+ //     		description = descStart.concat('The Multi Plaid is a modern take on the classic plaid providing a bold but wearable pop of color for your summer wardrobe.', " ", descEnd)
+	// 	{% when "Light-Weight / Summer Wrap - Multi Stripe" %}
+ //            description = descStart.concat('The Multi Stripe is a colorful take on the classic stripe providing endless options on how to wear it.', " ", descEnd)
+	// 	{% when "Light-Weight / Summer Wrap - Two Tone Border Solid" %}
+	// 		description = descStart.concat('The Two Tone Border Solid is a fresh take on a solid wrap with its bi-color checked border.', " ", descEnd)
+	// 	{% when "Light-Weight / Summer Wrap - Two Tone Stripe" %}
+	// 		description = descStart.concat('The Two Tone Stripe is a unique take on the classic stripe providing an easy, fun way of making your summer dressing more colorful.', " ", descEnd)
+ //        {%  when "Throw Blanket - Diagonal Print" %}
+ //          description = throwDesc.concat(" ", "Composition: 100% alpaca Size: 51in X 64in")
+ //        {%  when "Throw Blanket - Double Side Solid" %}
+ //          description = throwDesc.concat(" ", "Composition: 100% alpaca Size: 51in X 64in")
+ //        {%  when "Throw Blanket - Multi Plaid" %}
+ //          description = throwDesc.concat(" ", "Composition: 100% alpaca Size: 51in X 64in")
+ //        {%  when "Throw Blanket - Multi Stripe" %}
+ //          description = throwDesc.concat(" ", "Composition: 100% alpaca Size: 51in X 64in")
+ //        {%  when "Throw Blanket - Ombre Stripe" %}
+ //          description = throwDesc.concat(" ", "Composition: 100% alpaca Size: 51in X 64in")
+ //        {%  when "Throw Blanket - Pop Plaid" %}
+ //          description = throwDesc.concat(" ", "Composition: 100% alpaca Size: 51in X 64in")
+ //  		{% when "Men's 1/4 Zip Sweater"%}
+ //          description = "The men’s ¼ zip is a relaxed sweater than can be layered over a shirt or worn alone with a pair of jeans or work trousers. The zip adds polish and gives the option to wear the neck open for a casual look and closed for a professional look. It is buttery soft and so versatile that you will be wearing this non-stop all winter.\n Normal fit. Fits true to size. Model is 6’1” and is wearing a size M. \n Imported. \n Composition: 55% baby alpaca, 24% polyamide, 21% fine merino wool"
+ //    	{% when "Women's Cardigan Sweater"%}
+ //          description = "The women’s cardigan is a trendy, cropped style that looks good worn alone or over a slip dress or even jeans and a t shirt. It has signature Pacas buttons and is just the right length to be flattering for all body types. It is very versatile and can be used to elevate many of the outfits you already have in your closet. The unbelievable softness is a bonus - you will be reaching for this every day to layer on literally everything. \n Relaxed fit. Fits true to size. Model is 5’11” and is wearing a size XS. \n Imported.\n Composition: 60% baby alpaca, 35% polyamide, 5% merino wool"
+ //        {% when "Women's Crewneck Sweater"%}
+ //         description = "The women’s crewneck is an easy, relaxed sweater that looks great layered over a shirt or by itself. It has a chic fit and beautiful details down the sleeves. A crewneck is an essential piece in any woman’s wardrobe but the sleeve details and the gorgeous colors elevate the Pacas crewneck to a fashionable must-have. The unbelievable softness guarantees that it will quickly become one of your favorite pieces! \n Normal fit. Fits true to size. Model is 5’11” and is wearing a size XS. \n Imported.\n Composition: 60% baby alpaca, 35% polyamide, 5% merino wool"
+ //        {% when "Men's Crewneck Sweater"%}
+ //          description = "The men’s crewneck is an easy, relaxed sweater that looks great worn over a shirt or by itself. It has a classic look and is made with super soft wool guaranteed to make this one of your go-to sweaters this winter. \n Normal fit. Fits true to size. Model is 6’1” and is wearing a size M. \n Imported. \n Composition: 60% baby alpaca, 5% merino wool, 35% polyamide"
+ //        {% when "Women's Turtleneck Sweater"%}
+ //          description = "The women’s turtleneck is a chunky, luxurious sweater made of buttery soft alpaca wool. The neck can be folded over for a classic look or worn as a funnel neck. It is warm and fuzzy and can easily pair with your favorite jeans or a pencil skirt for work. The sweater feels like a hug and you will be reaching for it all winter long! \n Relaxed fit. Fits true to size. Model is 5’11” and is wearing a size XS. \n Imported. \n Composition: 70% Alpaca, 23% Polyamide, 7% Merino Wool"
+ //        {% when "Women's V Neck Sweater"%}
+ //          description = "The women’s V neck is an easy, relaxed sweater that looks great paired with denim or a silk trouser. The V neck makes it a flattering fit for all body types. The sweater is soft and cozy and will undoubtedly become one of the go-to pieces in your closet. \n Normal fit. Fits true to size. Model is 5’11” and is wearing a size XS. \n Imported. \n Composition: 74% Alpaca, 22% Merino Wool, 4% Polyamide"
+
+ //      {% else %}
+ //          description = "{{ product.description }}"
+ //      {% endcase %}
+      
+            $('#product-specs-wrapper').text(shipping)
+      
+      
+      $('.shipping-and-returns').click(function (){
+        $('.product-specs-active').removeClass("product-specs-active")
+        $(this).children("h4").addClass("product-specs-active")
+        $('#product-specs-wrapper').text(shipping)
+      })
+    // $('#description').click(function (){
+    //     $('.product-specs-active').removeClass("product-specs-active")
+    //     $(this).children("h4").addClass("product-specs-active")
+    //      $('#product-specs-wrapper').html(description)
+    //   })
+        $('#care-guide').click(function (){
+        $('.product-specs-active').removeClass("product-specs-active")
+        $(this).children("h4").addClass("product-specs-active")
+          if ($(".product-type").text() == "Accessory") {
+            $('#product-specs-wrapper').text(accessoryCare)
+          } else {
+            $('#product-specs-wrapper').text(sockCare)
+          }
+      })
+    })
+  </script>
+  
+    {%  unless product.title contains "Gift Card" %}
+  <section class="background-light-purple double-accent-padding tac" id="product-specs">
+    <div class="flex-container-no jcc">
+<!--       <div class="product-specs-wrapper third" id="description">
+        <h4 class="text-white ttu product-specs-active">Description</h4>
+      </div> -->
+      <div class="product-specs-wrapper third do shipping-and-returns">
+        <h4 class="text-white ttu product-specs-active">Shipping & Returns</h4>
+      </div>
+      <div class="product-specs-wrapper third mo shipping-and-returns">
+        <h4 class="text-white ttu product-specs-active">Shipping</h4>
+      </div>
+      <div class="product-specs-wrapper third" id="care-guide">
+        <h4 class="text-white ttu">Care Guide</h4>
+      </div>
+    </div>
+    <div id="product-specs-wrapper">
+      <p>{{ shipping }}</p>
+    </div>
+  </section>
+
+  {%  endunless %}
+  <section class="background-white">
+    
+    {% include 'review-container' %}
+
+    <section class="background-white accent-padding-so flex-container aifs" style="margin-bottom: -2vw;">
+      <div class="one-third accent-padding" id="mobile-benefits-wrapper">
+        <div class="accent-padding  mobile-benefits">
+          <h3 class="ttu accent-crown nm">Hypoallergenic</h3>
+          <p>doesn't contain lanolin, which is a natural oil that causes allergies</p>
+        </div>
+        <div class="accent-padding  mobile-benefits">
+          <h3 class="ttu accent-crown nm">Thermoregulating</h3>
+          <p>alpaca fiber has a hollow core, which insulates heat in the winter and helps keep it cool in the summer</p>
+        </div>
+      <div class="accent-padding mo  mobile-benefits">
+          <h3 class="ttu accent-crown nm">Moisture Wicking</h3>
+          <p>doesn't absorb ba-a-a-ad moisture, unlike wool</p>
+      </div>
+      <div class="accent-padding mo  mobile-benefits">
+          <h3 class="ttu accent-crown nm">Warmer Than Wool</h3>
+          <p>5x warmer than wool. Take that, sheeple!</p>
+      </div>
+      </div>
+      <div class="mo tac" style="margin-top: -20px; margin-bottom: 50px;">
+        <div class="selection-circle background-dark-teal"></div>
+        <div class="selection-circle"></div>
+        <div class="selection-circle"></div>
+        <div class="selection-circle"></div>
+      </div>
+      <div class="one-third tac asfe">
+        <img src="{{'rebrand-paca.png' | asset_url}}" id="alpaca-break">
+      </div>
+      <div class="one-third accent-padding do">
+        <div class="accent-padding do">
+          <h3 class="ttu accent-crown nm">Moisture Wicking</h3>
+          <p>doesn't absorb ba-a-a-ad moisture, unlike wool</p>
+        </div>
+        <div class="accent-padding do">
+          <h3 class="ttu accent-crown nm">Warmer Than Wool</h3>
+          <p>5x warmer than wool. Take that, sheeple!</p>
+        </div>
+      </div>
+    </section>
+    <script>
+      if ($(window).width() < 800) {
+        setInterval(function(){ 
+          if ($('.mobile-benefits:last-of-type').is(":visible")) {
+            $('.mobile-benefits:visible').hide()
+            $('.mobile-benefits:first-of-type').show();
+            $('.selection-circle.background-dark-teal').removeClass('background-dark-teal')
+            $('.selection-circle:first-of-type').addClass('background-dark-teal')
+          }
+          else {
+            $('.mobile-benefits:visible').hide().next().show();
+            $('.selection-circle.background-dark-teal').removeClass('background-dark-teal').next().addClass("background-dark-teal")
+          }
+        }, 3000);
+      }
+   </script>
+    <style>
+/*       stop product description from expanding past product title and add to cart button */
+      @media only screen and (min-width: 800px){
+        .subscript { width: 90% }
+      }
+    </style>
+    <svg xmlns="http://www.w3.org/2000/svg" class="topper"viewBox="0 0 1440 320"><path fill="#a0dbe3" fill-opacity="1" d="M0,224L40,224C80,224,160,224,240,197.3C320,171,400,117,480,128C560,139,640,213,720,229.3C800,245,880,203,960,176C1040,149,1120,139,1200,160C1280,181,1360,235,1400,261.3L1440,288L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z" ></path></svg>  
+    <section class="background-light-teal">
+       	<div class="fw flex-container index-product-preview-wrapper double-accent-padding" id="socks-quick">
+        	<div class="one-third index-product-preview">
+        	</div>
+        	<div class="one-third index-product-preview">
+        	</div>
+        	<div class="one-third index-product-preview">
+        	</div>
+          	<div class="one-third index-product-preview">
+        	</div>
+      	</div>
+    </section>
+    
+    {% include 'shop-cta' %}
+
+  </section>
+</main>
+
+<!-- sending GA events based on the subscription   -->
+<script>
+  $(document).on('click', '.rc_widget__option__input--subsave', function() {
+    ga('send', 'event', 'Subscribe & Save', 'Subscription Selection');
+  });
+</script> 

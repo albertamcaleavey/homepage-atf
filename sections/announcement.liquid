@@ -1,0 +1,42 @@
+<div class="fw announcement-bar background-light-purple "><h4 class="tac ttu text-dark-purple clickable" id="announcement-text-1"><a href="/collections/womens-crew" onClick="ga('send', 'event', 'Navigation', 'Announcement Bar', 'Fall Crew');">Our new fall crew socks are here!</a></h4><h4 class="tac ttu" style="display: none;" id="announcement-text-2">Free Expedited Shipping on Orders $80+</h4></div>
+
+<style>
+  .announcement-bar { 
+    position: fixed; 
+    display: flex; 
+    top: 0 !important;
+    align-items: center; 
+    height: 50px; 
+    justify-content: center; 
+    z-index: 999;
+    background-size: cover;
+/*     background-image: url("{{'Static_Top_Bar_Pacas.png' | asset_url }}");  */
+  }
+  .announcement-bar h4 { margin: 0 10px; }
+  #dnav { top: 50px !important; }
+  @media only screen and (min-width: 800px) {
+.upper-pad {
+    padding-top: 125px !important;
+}
+  }
+  @media only screen and (max-width: 799px) {
+.upper-pad {
+    padding-top: 100px !important;
+}
+  }
+  #desktop-drop {
+    position: fixed;
+    top: 125px !important;
+    z-index: 9999;
+}
+</style>
+<script>
+  $(document).ready(function() {
+    setInterval(function() {
+                      $('.announcement-bar h4').toggle(); 
+
+
+    }    , 2000)
+  }); 
+</script>
+

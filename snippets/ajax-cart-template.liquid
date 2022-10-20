@@ -1,0 +1,111 @@
+ 
+
+ <script id="CartTemplate" type="text/template">
+ 
+
+{% raw %}
+  {% endraw %}
+  <div class="background-light-teal flex-container-no jcsb accent-padding">
+    <a href="/cart">
+      <img src="{{'bag.png' | asset_url}}" class="icon" id="go-to-cart"/>
+    </a>
+    <h3 class="tac nm accent ttu text-white">Shopping Bag</h3>
+    <img src="{{'exit.png' | asset_url}}" class="icon clickable" id="close-cart" onclick="cartClose();">
+  </div>
+  <section class="">
+
+    {% raw %}
+    <form action="/cart" method="post" novalidate class="ajaxcart">
+      <div id="product-wrap" class="accent-padding background-white">
+              <p class="tac subscript text-dark-teal" id="free-2-day">Free Shipping on Orders over $80</p>
+
+        {{#items}}
+        <div class="flex-container-no border-bottom-natural">
+          <div class="quarter">
+            <a href="{{url}}" class="ajaxcart__product-image">
+              <img src="{{img}}" alt="">
+            </a>
+          </div>
+          <div class="accent-padding fw half">
+            <div class="flex-container-no">
+              <div>
+                <h4 class="ttu" style="margin: 14px 0;"><a href="{{url}}"class="ajaxcart__product-name">{{name}}</a></h4>
+                <div class="ajaxcart__qty flex-container-no" style="x">
+                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}">
+                  <span class="icon icon-minus" aria-hidden="true">−</span>   
+                </button>
+                <input type="text" name="updates[]" class=" tac ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*" style="width: 15px">
+                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}">
+                  <span class="icon icon-plus" aria-hidden="true">+</span>
+                </button>
+              </div>
+                  {{#if variation}}
+                    <p class="ajaxcart__product-meta subscript"><b>Style:</b> {{{ variation}}}</p>
+                    <p class="subscript">{{{ linePrice }}}</p>
+                </div>
+          </div>
+     
+            {% endraw %}
+            {% raw %}
+        </div>
+      </div>
+            {{/if}}
+            {{#properties}}
+              {{#each this}}
+                {{#if this}}
+                  <span class="ajaxcart__product-meta">{{@key}}: {{this}}</span>
+                {{/if}}
+              {{/each}}
+            {{/properties}}
+
+            {{/items}}
+        </div>
+   
+      <div class="ajaxcart__footer accent-padding">
+
+        <button type="submit" class="add-to-cart btn btn--secondary btn--full cart__checkout btn clickable fw" name="checkout" style="margin-top: 0.5em; height: 54px">
+          <h4 class="ttu text-white nm">Checkout - {{{totalPrice}}}</h4>
+        </button>
+          {%endraw%}
+        {% if additional_checkout_buttons %}
+                <p class="subscript tac">other payment options</p>
+
+          <div class="additional-checkout-buttons additional-checkout-buttons--vertical">{{ content_for_additional_checkout_buttons }}</div>
+        {% endif %}
+        {% raw %}
+      </div>
+    </form>
+  </section>
+  {% endraw %}
+
+
+<script>
+  Handlebars.registerHelper('splitTitle', function(title) {
+    var t = title.split(" / ");
+    return "Color: " + t[0] + "<br>Size: " + t[1] ;
+  });
+</script>
+<script>
+    $(document).ready(function() {
+    setInterval(function() {
+                      $('#free-2-day').toggleClass("text-dark-teal"); 
+
+
+    }    , 1000)
+  }); 
+</script>
+<style>
+  .ajaxcart__qty-adjust { border: none; background: transparent; }
+  .ajaxcart__qty {
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 0 10px;
+}
+  .ajaxcart__qty-num {
+    width: 15px;
+    height: 25px;
+    border: none;
+}
+  .border-bottom-natural:last-of-type { border-bottom: none; } 
+</style>
