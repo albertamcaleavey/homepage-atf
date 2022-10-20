@@ -512,6 +512,9 @@ body { margin: 0; }
     background-size:  cover;
     align-items:  flex-end !important;
     justify-content: flex-end !important;
+    height: 45vw;
+    background-position:  bottom;
+    margin-left: 10px;
   }
   #review-photo {
     border-radius: 40px;
@@ -738,11 +741,7 @@ body { margin: 0; }
     justify-content: flex-end !important;
      margin-right: 10px;
   }
-  #find-your-match {
-    height:  45vw;
-    background-position:  bottom;
-    margin-left: 10px;
-  }
+  
   .review p:first-of-type { height: 15vw; }
 
   #footer-signup-wrapper { max-width: 600px; margin: 0 auto; }
@@ -1704,4 +1703,16 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   z-index: 999;
 }
 
-.mobile-nav-b-container {display: none}
+/* HOMEPAGE ATF */
+#homepage-featured-blocks > div {
+  background-image: url("{{ 'placeholder.png' | asset_img_url }}");
+  background-size:  cover;
+  margin: 10px;
+  border-radius: 10px;
+  height: 30vw;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
