@@ -1710,6 +1710,7 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
 
 /* HOMEPAGE ATF */
 #homepage-atf, #homepage-full-assortment {
+  display: flex;
   overflow: scroll;
   white-space: nowrap;
   overflow-y: scroll;
@@ -1729,9 +1730,6 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   background-size: contain;
   border-radius: 10px;
   margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   white-space: normal;
   /* max-width: 500px; */
   max-height: 500px;
@@ -1741,9 +1739,6 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   background-size: contain;
   margin: 5px;
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   white-space: normal;
   max-width: 250px;
   max-height: 250px;
@@ -1756,6 +1751,12 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   }
   #homepage-atf > div > div {
     width: 70%;
+  }
+  #homepage-atf > div > div > a > p {
+    font-size: .9em;
+  }
+  #homepage-full-assortment > div > a > p  {
+    font-size: .9em;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -1777,22 +1778,22 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
     height: 30vw;
   }
   #homepage-full-assortment > div {
-    width: 15vw;
-    height: 15vw;
+    min-width: 15vw;
+    min-height: 15vw;
   }
 }
 @media only screen and (min-width: 1600px) {
   #homepage-atf > div > h3 {
     font-size: 2.2rem;
   }
-  #homepage-atf > div > div > a > p {
-    font-size: 1rem;
-  }
   .assortment-txt {
     font-size: 2.2rem;
   }
-  #homepage-full-assortment > div > a > p  {
-    font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1310px) {
+  #homepage-atf > div > div {
+    min-height: 60px;
   }
 }
 
