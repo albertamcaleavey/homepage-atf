@@ -1,11 +1,11 @@
 <section class="flex-container background-white aifs">
     <div class="half double-accent-padding" id="featured-image-wrapper">
-        <div class="product-image-preview"></div>
-        <div class="product-image-preview"></div>
+        {% comment %} <div class="product-image-preview"></div>
+        <div class="product-image-preview"></div> {% endcomment %}
         <img src="{{'2868.png' | asset_img_url: 'master' }}" loading="lazy" class="low-cut-royal-blue product-img">
         <img src="{{'6074.png' | asset_img_url: 'master' }}" loading="lazy" class="crew-stripe-hemp product-img" style="display: none">
         <img src="{{'2512.png' | asset_img_url: 'master' }}" loading="lazy" class="low-cut-green-mint product-img" style="display: none">
-        <img src="{{'1050-free-pack-promo.png' | asset_img_url: 'master' }}" loading="lazy product-img" class="crew-black" style="display: none">
+        <img src="{{'1050-free-pack-promo.png' | asset_img_url: 'master' }}" loading="lazy product-img" class="crew-black product-img" style="display: none">
     </div>
     <div class="half double-accent-padding">
         <h2 class="nm ttu">Product Title</h2>
@@ -42,7 +42,7 @@
                 <p class="tac nm ttu color-option">Low Cut Green Mint</p>
             </div>
             <div class="color-option-container option clickable mens-option m-crew-black" style="display: none">
-                <p class="tac nm ttu">Crew Black</p>
+                <p class="tac nm ttu color-option">Crew Black</p>
             </div>
         </div>
         {% comment %} size option {% endcomment %}
@@ -50,13 +50,13 @@
             <div class="size-option-container option clickable womens-option w-s/m" style="display: none">
                 <p class="tac nm ttu size-option">Small/Med</p>
             </div>
-            <div class="size-option option clickable womens-option w-m/l" style="display: none">
+            <div class="size-option-container option clickable womens-option w-m/l" style="display: none">
                 <p class="tac nm ttu size-option">Med/Large</p>
             </div>
-            <div class="size-option option clickable mens-option m-m/l" style="display: none">
+            <div class="size-option-container option clickable mens-option m-m/l" style="display: none">
                 <p class="tac nm ttu size-option">Med/Large</p>
             </div>
-            <div class="size-option option clickable mens-option m-l/xl" style="display: none">
+            <div class="size-option-container option clickable mens-option m-l/xl" style="display: none">
                 <p class="tac nm ttu size-option">Large/Extra-Large</p>
             </div>
         </div>
@@ -125,6 +125,7 @@
             $('.color-option').removeClass('selected')
             $(this).children('.color-option').addClass('selected')
             let colorSelection = $(this).children('.color-option').text().toLowerCase().replaceAll(' ', '-')
+            console.log(colorSelection)
             $('.product-img').hide()
             $('.' + colorSelection).show()
         })
@@ -133,29 +134,48 @@
             $(this).children('.size-option').addClass('selected')
             $('.add-to-cart').css('visibility', 'visible')
         })
+        
+        function addItemToCart(variant_id, qty) {
+            data = {
+              "id": variant_id,
+              "quantity": qty,
+            }
+            jQuery.ajax({
+              type: 'POST',
+              url: '/cart/add.js',
+              data: data,
+              dataType: 'json',
+              success: function() { 
+                window.location.href = '/cart'; 
+              }
+            });
+          }
+
+
         $('.add-to-cart').click(function() {
             let selectedVariantColor = $('.color-option.selected').text()
             let selectedVariantSize = $('.size-option.selected').text()
             console.log(selectedVariantColor)
             console.log(selectedVariantSize)
             var variantId = ''
-            if (selectedVariant == 'Low Cut Royal Blue' && selectedVariantSize == 'Small/Med') {
+            if (selectedVariantColor == 'Low Cut Royal Blue' && selectedVariantSize == 'Small/Med') {
                 variantId = 40067231875172
-            } else if (selectedVariant == 'Low Cut Royal Blue' && selectedVariantSize == 'Med/Large') {
+            } else if (selectedVariantColor == 'Low Cut Royal Blue' && selectedVariantSize == 'Med/Large') {
                 variantId = 40067232104548
-            } else if (selectedVariant == 'Crew Stripe Hemp' && selectedVariantSize == 'Small/Med') {
+            } else if (selectedVariantColor == 'Crew Stripe Hemp' && selectedVariantSize == 'Small/Med') {
                 variantId = 40605806887012
-            } else if (selectedVariant == 'Crew Stripe Hemp' && selectedVariantSize == 'Med/Large') {
+            } else if (selectedVariantColor == 'Crew Stripe Hemp' && selectedVariantSize == 'Med/Large') {
                 variantId = 40605819961444
-            } else if (selectedVariant == 'Low Cut Green Mint' && selectedVariantSize == 'Med/Large') {
+            } else if (selectedVariantColor == 'Low Cut Green Mint' && selectedVariantSize == 'Med/Large') {
                 variantId = 39446667559012
-            } else if (selectedVariant == 'Low Cut Green Mint' && selectedVariantSize == 'Large/Extra-Large') {
-                variant id = 33054027251812
-            } else if (selectedVariant == 'Crew Black' && selectedVariantSize == 'Med/Large') {
+            } else if (selectedVariantColor == 'Low Cut Green Mint' && selectedVariantSize == 'Large/Extra-Large') {
+                variantId = 33054027251812
+            } else if (selectedVariantColor == 'Crew Black' && selectedVariantSize == 'Med/Large') {
                 variantId = 32884569964644
-            } else if (selectedVariant == 'Crew Black' && selectedVariantSize == 'Large/Extra-Large') {
+            } else if (selectedVariantColor == 'Crew Black' && selectedVariantSize == 'Large/Extra-Large') {
                 variantId = 32884569833572
             }
+            addItemToCart(variantId, 1)
         })  
     </script>
 </section>
