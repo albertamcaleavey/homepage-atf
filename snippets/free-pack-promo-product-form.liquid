@@ -1,0 +1,105 @@
+<section class="flex-container background-white aifs">
+    <div class="half double-accent-padding" id="featured-image-wrapper">
+        <div class="product-image-preview"></div>
+        <div class="product-image-preview"></div>
+        <img src="{{'2868.png' | asset_img_url: 'master' }}" loading="lazy" class="low-cut-royal-blue product-img">
+        <img src="{{'6074.png' | asset_img_url: 'master' }}" loading="lazy" class="crew-stripe-hemp product-img" style="display: none">
+        <img src="{{'2512.png' | asset_img_url: 'master' }}" loading="lazy" class="low-cut-green-mint product-img" style="display: none">
+        <img src="{{'1050-free-pack-promo.png' | asset_img_url: 'master' }}" loading="lazy product-img" class="crew-black" style="display: none">
+    </div>
+    <div class="half double-accent-padding">
+        <h2 class="nm ttu">Product Title</h2>
+        <p id="product-summary" class="subscript">Super soft, breathable, wicking and thermoregulating. The perfect socks for a long day on your feet.</p>
+        
+        {% comment %} REVIEWS {% endcomment %}
+        <a href= https://www.pacas.com/pages/reviews>
+            <section class="text-red clickable" id="review-snippet" style="margin-bottom: 10px">
+         
+                    ★
+                    ★
+                    ★
+                    ★
+                    ★
+                  <span class="review-span">4712 Reviews</span>
+          </section>
+        </a>
+        
+
+        {% comment %} gender option {% endcomment %}
+        <div class="free-pack-promo-options-container">
+            <div class="gender-option option clickable"><p class="tac nm ttu">Women</p></div>
+            <div class="gender-option option clickable"><p class="tac nm ttu">Men</p></div>
+        </div>
+        {% comment %} color option {% endcomment %}
+        <div class="free-pack-promo-options-container">
+            <div class="color-option option clickable womens-option w-low-cut-royal-blue" style="display: none"><p class="tac nm ttu">Low Cut Royal Blue</p></div>
+            <div class="color-option option clickable womens-option w-crew-stripe-hemp" style="display: none"><p class="tac nm ttu">Crew Stripe Hemp</p></div>
+            <div class="color-option option clickable mens-option m-low-cut-green-mint" style="display: none"><p class="tac nm ttu">Low Cut Green Mint</p></div>
+            <div class="color-option option clickable mens-option m-crew-black" style="display: none"><p class="tac nm ttu">Crew Black</p></div>
+        </div>
+        {% comment %} size option {% endcomment %}
+        <div class="free-pack-promo-options-container">
+            <div class="option clickable womens-option w-s/m" style="display: none"><p class="tac nm ttu">Small/Med</p></div>
+            <div class="option clickable womens-option w-m/l" style="display: none"><p class="tac nm ttu">Med/Large</p></div>
+            <div class="option clickable mens-option m-m/l" style="display: none"><p class="tac nm ttu">Med/Large</p></div>
+            <div class="option clickable mens-option m-l/xl" style="display: none"><p class="tac nm ttu">Large/Extra-Large</p></div>
+        </div>
+        <button class="add-to-cart ttu"><h4 class="ttu text-natural">Add to Cart</h4></button>
+        <img src="{{'rebrand-guarantee-badge-dark-purple.svg' | asset_url}}" id="product-badge" class="do" style="margin: 2vw"/>
+    </div>
+    <style>
+        .free-pack-promo-options-container {
+            display: flex;
+        }
+        .gender-option, .option {
+            border: 2px solid #9093c8;
+            border-radius: 10px;
+            margin: 0 10px 10px 0;
+            padding: 10px;
+            width: 39.3%;
+        }
+        .option > p {
+            font-size: 12px;
+        }
+        {% comment %} REVIEWS {% endcomment %}
+        #all-reviews-modal {
+            height: 90%; 
+            width: 90%; 
+            z-index: 999; 
+            background-color: white; 
+          }
+          #pacas-review-iframe { 
+            height: calc(100% - 10px);
+            width: calc(100% - 10px); 
+              border: none;
+          }
+          .review-stars {
+            vertical-align: middle; 
+          }
+          .review-span {
+            vertical-align: bottom;
+            margin-left: 5px;
+            line-height: 20px; 
+            font-weight: normal;
+          }
+          .read-reviews {
+            text-decoration: underline; 
+          }
+    </style>
+    <script>
+        $('.gender-option').click(function() {
+            $('.womens-option, .mens-option').hide()
+            let genderSelection = $(this).text()
+            if (genderSelection == 'Women') {
+                $('.womens-option').show()
+            } else if (genderSelection == 'Men') {
+                $('.mens-option').show()
+            }
+        })
+        $('.color-option').click(function() {
+            let colorSelection = $(this).text().toLowerCase().replaceAll(' ', '-')
+            $('.product-img').hide()
+            $('.' + colorSelection).show()
+        })
+    </script>
+</section>

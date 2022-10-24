@@ -57,10 +57,10 @@
       {% form 'product', product, data-productid: product.id, class: "checkout" %}
       <h2 class="nm ttu"> {{ product.title | remove: 'Light-Weight / Summer Wrap - ' | remove: 'Throw Blanket - '}}</h2>
        {% if product.available  %}
-          {% include 'swatch' with 'Color' %}
+          {% render 'swatch' with 'Color' %}
           <p class="subscript"><b>Color: </b><span id="color-selected" style="font-weight: lighter;"></span></p>
            {% unless product.title contains 'Scarf'%}
-            {% include 'swatch' with 'Size' %}
+            {% render 'swatch' with 'Size' %}
           {% endunless %}
         {% endif %}
       <p class="product-description">{{ product.description }}</p>
