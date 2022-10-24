@@ -13,7 +13,7 @@
         
         {% comment %} REVIEWS {% endcomment %}
         <a href= https://www.pacas.com/pages/reviews>
-            <section class="text-red clickable" id="review-snippet" style="margin-bottom: 10px">
+            <section class="text-red clickable" id="review-snippet" style="margin-bottom: 30px">
          
                     ★
                     ★
@@ -32,19 +32,35 @@
         </div>
         {% comment %} color option {% endcomment %}
         <div class="free-pack-promo-options-container">
-            <div class="color-option option clickable womens-option w-low-cut-royal-blue" style="display: none"><p class="tac nm ttu">Low Cut Royal Blue</p></div>
-            <div class="color-option option clickable womens-option w-crew-stripe-hemp" style="display: none"><p class="tac nm ttu">Crew Stripe Hemp</p></div>
-            <div class="color-option option clickable mens-option m-low-cut-green-mint" style="display: none"><p class="tac nm ttu">Low Cut Green Mint</p></div>
-            <div class="color-option option clickable mens-option m-crew-black" style="display: none"><p class="tac nm ttu">Crew Black</p></div>
+            <div class="color-option-container option clickable womens-option w-low-cut-royal-blue" style="display: none">
+                <p class="tac nm ttu color-option">Low Cut Royal Blue</p>
+            </div>
+            <div class="color-option-container option clickable womens-option w-crew-stripe-hemp" style="display: none">
+                <p class="tac nm ttu color-option">Crew Stripe Hemp</p>
+            </div>
+            <div class="color-option-container option clickable mens-option m-low-cut-green-mint" style="display: none">
+                <p class="tac nm ttu color-option">Low Cut Green Mint</p>
+            </div>
+            <div class="color-option-container option clickable mens-option m-crew-black" style="display: none">
+                <p class="tac nm ttu">Crew Black</p>
+            </div>
         </div>
         {% comment %} size option {% endcomment %}
         <div class="free-pack-promo-options-container">
-            <div class="option clickable womens-option w-s/m" style="display: none"><p class="tac nm ttu">Small/Med</p></div>
-            <div class="option clickable womens-option w-m/l" style="display: none"><p class="tac nm ttu">Med/Large</p></div>
-            <div class="option clickable mens-option m-m/l" style="display: none"><p class="tac nm ttu">Med/Large</p></div>
-            <div class="option clickable mens-option m-l/xl" style="display: none"><p class="tac nm ttu">Large/Extra-Large</p></div>
+            <div class="size-option-container option clickable womens-option w-s/m" style="display: none">
+                <p class="tac nm ttu size-option">Small/Med</p>
+            </div>
+            <div class="size-option option clickable womens-option w-m/l" style="display: none">
+                <p class="tac nm ttu size-option">Med/Large</p>
+            </div>
+            <div class="size-option option clickable mens-option m-m/l" style="display: none">
+                <p class="tac nm ttu size-option">Med/Large</p>
+            </div>
+            <div class="size-option option clickable mens-option m-l/xl" style="display: none">
+                <p class="tac nm ttu size-option">Large/Extra-Large</p>
+            </div>
         </div>
-        <button class="add-to-cart ttu"><h4 class="ttu text-natural">Add to Cart</h4></button>
+        <button class="add-to-cart ttu" style="visibility: hidden"><h4 class="ttu nm text-natural">Add to Cart</h4></button>
         <img src="{{'rebrand-guarantee-badge-dark-purple.svg' | asset_url}}" id="product-badge" class="do" style="margin: 2vw"/>
     </div>
     <style>
@@ -55,11 +71,18 @@
             border: 2px solid #9093c8;
             border-radius: 10px;
             margin: 0 10px 10px 0;
-            padding: 10px;
+            padding: 5px;
             width: 39.3%;
         }
         .option > p {
             font-size: 12px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .selected {
+            color: white;
+            border-radius: 10px;
+            background: #21409A;
         }
         {% comment %} REVIEWS {% endcomment %}
         #all-reviews-modal {
@@ -88,6 +111,8 @@
     </style>
     <script>
         $('.gender-option').click(function() {
+            $('.gender-option').children('p').removeClass('selected')
+            $(this).children('p').addClass('selected')
             $('.womens-option, .mens-option').hide()
             let genderSelection = $(this).text()
             if (genderSelection == 'Women') {
@@ -96,10 +121,41 @@
                 $('.mens-option').show()
             }
         })
-        $('.color-option').click(function() {
-            let colorSelection = $(this).text().toLowerCase().replaceAll(' ', '-')
+        $('.color-option-container').click(function() {
+            $('.color-option').removeClass('selected')
+            $(this).children('.color-option').addClass('selected')
+            let colorSelection = $(this).children('.color-option').text().toLowerCase().replaceAll(' ', '-')
             $('.product-img').hide()
             $('.' + colorSelection).show()
         })
+        $('.size-option-container').click(function() {
+            $('.size-option').removeClass('selected')
+            $(this).children('.size-option').addClass('selected')
+            $('.add-to-cart').css('visibility', 'visible')
+        })
+        $('.add-to-cart').click(function() {
+            let selectedVariantColor = $('.color-option.selected').text()
+            let selectedVariantSize = $('.size-option.selected').text()
+            console.log(selectedVariantColor)
+            console.log(selectedVariantSize)
+            var variantId = ''
+            if (selectedVariant == 'Low Cut Royal Blue' && selectedVariantSize == 'Small/Med') {
+                variantId = 40067231875172
+            } else if (selectedVariant == 'Low Cut Royal Blue' && selectedVariantSize == 'Med/Large') {
+                variantId = 40067232104548
+            } else if (selectedVariant == 'Crew Stripe Hemp' && selectedVariantSize == 'Small/Med') {
+                variantId = 40605806887012
+            } else if (selectedVariant == 'Crew Stripe Hemp' && selectedVariantSize == 'Med/Large') {
+                variantId = 40605819961444
+            } else if (selectedVariant == 'Low Cut Green Mint' && selectedVariantSize == 'Med/Large') {
+                variantId = 39446667559012
+            } else if (selectedVariant == 'Low Cut Green Mint' && selectedVariantSize == 'Large/Extra-Large') {
+                variant id = 33054027251812
+            } else if (selectedVariant == 'Crew Black' && selectedVariantSize == 'Med/Large') {
+                variantId = 32884569964644
+            } else if (selectedVariant == 'Crew Black' && selectedVariantSize == 'Large/Extra-Large') {
+                variantId = 32884569833572
+            }
+        })  
     </script>
 </section>
