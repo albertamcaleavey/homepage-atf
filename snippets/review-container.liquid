@@ -7,6 +7,7 @@
      </section>
 	 <script>
        $("#iFrame1").on("load", function () {
+        console.log('test')
          $('#iFrame1').iFrameResize( [{
            checkOrigin:false,
            log:true,
@@ -15,13 +16,4 @@
          }] );
        });
 	</script>
-  {%- comment -%} show a new review every three seconds
-  <script>
-    setInterval(function(){
-      $('.slick-active').attr('aria-hidden', 'true')
-      $('slick-active').next().attr('aria-hidden', 'false')
-      $('.slick-active').removeClass('slick-active').removeClass('slick-current')
-      // find the element with aria-hidden = false and add classes slick-active and slick-current
-    }, 3000)
-  </script> {%- endcomment -%}
    </section>
