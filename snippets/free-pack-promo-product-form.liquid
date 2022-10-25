@@ -26,13 +26,17 @@
         
 
         {% comment %} gender option {% endcomment %}
-        <h4 class="ttu">Gender:</h4>
+        <h4 class="ttu nm" style="padding: 10px 0 5px 0">Gender:</h4>
         <div class="free-pack-promo-options-container">
-            <div class="gender-option option clickable"><p class="tac nm ttu">Women</p></div>
-            <div class="gender-option option clickable"><p class="tac nm ttu">Men</p></div>
+            <div class="gender-option-container option clickable">
+                <p class="tac nm ttu gender-option">Women</p>
+            </div>
+            <div class="gender-option-container option clickable">
+                <p class="tac nm ttu gender-option">Men</p>
+            </div>
         </div>
         {% comment %} color option {% endcomment %}
-        <h4 class="ttu style-title" style="display: none">Style:</h4>
+        <h4 class="ttu nm style-title" style="display: none; padding: 10px 0 5px 0">Style:</h4>
         <div class="free-pack-promo-options-container">
             <div class="color-option-container option clickable womens-option w-low-cut-royal-blue" style="display: none">
                 <p class="tac nm ttu color-option">Low Cut Royal Blue</p>
@@ -48,7 +52,7 @@
             </div>
         </div>
         {% comment %} size option {% endcomment %}
-        <h4 class="ttu size-title" style="display: none">Size:</h4>
+        <h4 class="ttu nm size-title" style="display: none; padding: 10px 0 5px 0">Size:</h4>
         <div class="free-pack-promo-options-container">
             <div class="size-option-container option clickable womens-option w-s/m" style="display: none">
                 <p class="tac nm ttu size-option">Small/Med</p>
@@ -63,14 +67,14 @@
                 <p class="tac nm ttu size-option">Large/Extra-Large</p>
             </div>
         </div>
-        <button class="add-to-cart ttu" style="visibility: hidden; margin-top: 2vw"><h4 class="ttu nm text-natural">Add to Cart</h4></button>
+        <button class="add-to-cart ttu clickable" style="visibility: hidden; margin-top: 2vw"><h4 class="ttu nm text-natural">Add to Cart</h4></button>
         <img src="{{'rebrand-guarantee-badge-dark-purple.svg' | asset_url }}" id="product-badge" class="do" style="margin: 2vw"/>
     </div>
     <style>
         .free-pack-promo-options-container {
             display: flex;
         }
-        .gender-option, .option {
+        .option {
             border: 2px solid #9093c8;
             border-radius: 10px;
             margin: 0 10px 10px 0;
@@ -113,11 +117,11 @@
           }
     </style>
     <script>
-        $('.gender-option').click(function() {
-            $('.gender-option').children('p').removeClass('selected')
-            $(this).children('p').addClass('selected')
+        $('.gender-option-container').click(function() {
+            $('.gender-option').removeClass('selected')
+            $(this).children('.gender-option').addClass('selected')
             $('.womens-option, .mens-option').hide()
-            let genderSelection = $(this).text()
+            let genderSelection = $(this).children('.gender-option').text()
             $('.style-title').show()
             if (genderSelection == 'Women') {
                 $('.womens-option.color-option-container').show()
@@ -130,7 +134,12 @@
             $(this).children('.color-option').addClass('selected')
             let colorSelection = $(this).children('.color-option').text().toLowerCase().replaceAll(' ', '-')
             $('.product-img').hide()
-            $('.womens-option.size-option-container').show()
+            console.log($('.gender-option.selected').text())
+            if ($('.gender-option.selected').text() == 'Women') {
+                $('.womens-option.size-option-container').show()
+            } else if ($('.gender-option.selected').text() == 'Men') {
+                $('.mens-option.size-option-container').show()
+            }
             $('.size-title').show()
             $('.' + colorSelection).show()
         })
@@ -164,21 +173,21 @@
             console.log(selectedVariantSize)
             var variantId = ''
             if (selectedVariantColor == 'Low Cut Royal Blue' && selectedVariantSize == 'Small/Med') {
-                variantId = 40067231875172
+                variantId = 40942112145508
             } else if (selectedVariantColor == 'Low Cut Royal Blue' && selectedVariantSize == 'Med/Large') {
-                variantId = 40067232104548
+                variantId = 40942112211044
             } else if (selectedVariantColor == 'Crew Stripe Hemp' && selectedVariantSize == 'Small/Med') {
-                variantId = 40605806887012
+                variantId = 40942112178276
             } else if (selectedVariantColor == 'Crew Stripe Hemp' && selectedVariantSize == 'Med/Large') {
-                variantId = 40605819961444
+                variantId = 40942112243812
             } else if (selectedVariantColor == 'Low Cut Green Mint' && selectedVariantSize == 'Med/Large') {
-                variantId = 39446667559012
+                variantId = 40942080491620
             } else if (selectedVariantColor == 'Low Cut Green Mint' && selectedVariantSize == 'Large/Extra-Large') {
-                variantId = 33054027251812
+                variantId = 40942080557156
             } else if (selectedVariantColor == 'Crew Black' && selectedVariantSize == 'Med/Large') {
-                variantId = 32884569964644
+                variantId = 40942080524388
             } else if (selectedVariantColor == 'Crew Black' && selectedVariantSize == 'Large/Extra-Large') {
-                variantId = 32884569833572
+                variantId = 40942080589924
             }
             addItemToCart(variantId, 1)
         })  
