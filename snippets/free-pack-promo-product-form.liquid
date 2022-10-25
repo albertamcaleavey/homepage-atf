@@ -134,7 +134,6 @@
             $(this).children('.color-option').addClass('selected')
             let colorSelection = $(this).children('.color-option').text().toLowerCase().replaceAll(' ', '-')
             $('.product-img').hide()
-            console.log($('.gender-option.selected').text())
             if ($('.gender-option.selected').text() == 'Women') {
                 $('.womens-option.size-option-container').show()
             } else if ($('.gender-option.selected').text() == 'Men') {

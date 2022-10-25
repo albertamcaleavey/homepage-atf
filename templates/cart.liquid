@@ -51,9 +51,11 @@
                   {%  endif %}
                     <p class="nm">
                       {{ item.variant.title }} <br>
-                      <span>Qty:</span> <input type="text" size="4" id="updates_{{ item.id }}" name="updates[{{ item.id }}]" value="{{ item.quantity }}" class="tac"> @ {{ item.line_price | divided_by: item.quantity | money }}
-                                      <input type="submit" name="update" value="update" class="cart-update update-cart-quantity">
-
+                      {% unless item.product.title contains 'Free Pack Promo' %}
+                       
+                        <span>Qty:</span> <input type="text" size="4" id="updates_{{ item.id }}" name="updates[{{ item.id }}]" value="{{ item.quantity }}" class="tac"> @ {{ item.line_price | divided_by: item.quantity | money }}
+                        <input type="submit" name="update" value="update" class="cart-update update-cart-quantity">
+                      {% endunless %}
                     </p>
                   </div>
                   <div class="price-details quarter asfs">
