@@ -2,8 +2,8 @@
     <div class="half double-accent-padding" id="featured-image-wrapper">
         {% comment %} <div class="product-image-preview"></div>
         <div class="product-image-preview"></div> {% endcomment %}
-        <img src="{{'2868.png' | asset_img_url: 'master' }}" loading="lazy" class="low-cut-royal-blue product-img">
-        <img src="{{'6074.png' | asset_img_url: 'master' }}" loading="lazy" class="crew-stripe-hemp product-img" style="display: none">
+        <img src="{{'2868.png' | asset_img_url: 'master' }}" loading="lazy" class="low-cut-royal-blue product-img" style="display: none">
+        <img src="{{'6074.png' | asset_img_url: 'master' }}" loading="lazy" class="crew-stripe-hemp product-img">
         <img src="{{'2512.png' | asset_img_url: 'master' }}" loading="lazy" class="low-cut-green-mint product-img" style="display: none">
         <img src="{{'1050-free-pack-promo.png' | asset_img_url: 'master' }}" loading="lazy product-img" class="crew-black product-img" style="display: none">
     </div>
@@ -120,7 +120,7 @@
         $('.gender-option-container').click(function() {
             $('.gender-option').removeClass('selected')
             $(this).children('.gender-option').addClass('selected')
-            $('.womens-option, .mens-option').hide()
+            $('.womens-option, .mens-option, .size-title').hide()
             let genderSelection = $(this).children('.gender-option').text()
             $('.style-title').show()
             if (genderSelection == 'Women') {
@@ -146,6 +146,22 @@
             $('.size-option').removeClass('selected')
             $(this).children('.size-option').addClass('selected')
             $('.add-to-cart').css('visibility', 'visible')
+            let sizeDetails = ''
+            if ($('.size-option.selected').text() == 'Small/Med') {
+                sizeDetails = 'Small / Medium (US: 5 - 8)'
+                console.log(sizeDetails)
+            } else if ($('.size-option.selected').text() == 'Med/Large' && $('.gender-option.selected').text() == 'Women') {
+                sizeDetails = 'Size: Medium / Large (US: 8.5 - 11.5+)'
+                console.log(sizeDetails)
+            } else if ($('.size-option.selected').text() == 'Med/Large' && $('.gender-option.selected').text() == 'Men') {
+                sizeDetails = 'Size: Medium / Large (US: 7 - 10)'
+                console.log(sizeDetails)
+            } else {
+                sizeDetails = 'Size: Large / Extra-Large (US: 10.5 - 14+)'
+                console.log(sizeDetails)
+            }
+            console.log()
+            $('.size-title').text('Size: ' + sizeDetails)
         })
         
         function addItemToCart(variant_id, qty) {
