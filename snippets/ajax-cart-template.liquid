@@ -52,11 +52,11 @@ Handlebars.registerHelper('contains', function(needle, haystack, options) {
                 {{else}}
            <div class="ajaxcart__qty flex-container-no {{ name }}" style="">
                 <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{key}}" data-qty="{{itemMinus}}" data-line="{{line}}">
-                  <span class="icon icon-minus" aria-hidden="true">−</span>   
+                  <span class="clickable icon icon-minus" aria-hidden="true">−</span>   
                 </button>
                 <input type="text" name="updates[]" class=" tac ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*" style="width: 15px">
                 <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{key}}" data-line="{{line}}" data-qty="{{itemAdd}}">
-                  <span class="icon icon-plus" aria-hidden="true">+</span>
+                  <span class="clickable icon icon-plus" aria-hidden="true">+</span>
                 </button>
               </div>
               {{/contains}}

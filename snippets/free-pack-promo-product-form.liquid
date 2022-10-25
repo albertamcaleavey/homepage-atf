@@ -187,24 +187,22 @@
         $('.add-to-cart').click(function() {
             let selectedVariantColor = $('.color-option.selected').text()
             let selectedVariantSize = $('.size-option.selected').text()
-            console.log(selectedVariantColor)
-            console.log(selectedVariantSize)
             var variantId = ''
-            if (selectedVariantColor == 'Low Cut Royal Blue' && selectedVariantSize == 'Small/Med') {
+            if (selectedVariantColor == 'Low Cut Royal Blue' && selectedVariantSize == 'Small/Med(US: 5 - 8)') {
                 variantId = 40942112145508
-            } else if (selectedVariantColor == 'Low Cut Royal Blue' && selectedVariantSize == 'Med/Large') {
+            } else if (selectedVariantColor == 'Low Cut Royal Blue' && selectedVariantSize == 'Med/Large(US: 8.5 - 11.5+)') {
                 variantId = 40942112211044
-            } else if (selectedVariantColor == 'Crew Stripe Hemp' && selectedVariantSize == 'Small/Med') {
+            } else if (selectedVariantColor == 'Crew Stripe Hemp' && selectedVariantSize == 'Small/Med(US: 5 - 8)') {
                 variantId = 40942112178276
-            } else if (selectedVariantColor == 'Crew Stripe Hemp' && selectedVariantSize == 'Med/Large') {
+            } else if (selectedVariantColor == 'Crew Stripe Hemp' && selectedVariantSize == 'Med/Large(US: 8.5 - 11.5+)') {
                 variantId = 40942112243812
-            } else if (selectedVariantColor == 'Low Cut Green Mint' && selectedVariantSize == 'Med/Large') {
+            } else if (selectedVariantColor == 'Low Cut Green Mint' && selectedVariantSize == 'Med/Large(US: 7 - 10)') {
                 variantId = 40942080491620
-            } else if (selectedVariantColor == 'Low Cut Green Mint' && selectedVariantSize == 'Large/Extra-Large') {
+            } else if (selectedVariantColor == 'Low Cut Green Mint' && selectedVariantSize == 'Large/Extra-Large(US: 10.5 - 14+)') {
                 variantId = 40942080557156
-            } else if (selectedVariantColor == 'Crew Black' && selectedVariantSize == 'Med/Large') {
+            } else if (selectedVariantColor == 'Crew Black' && selectedVariantSize == 'Med/Large(US: 7 - 10)') {
                 variantId = 40942080524388
-            } else if (selectedVariantColor == 'Crew Black' && selectedVariantSize == 'Large/Extra-Large') {
+            } else if (selectedVariantColor == 'Crew Black' && selectedVariantSize == 'Large/Extra-Large(US: 10.5 - 14+)') {
                 variantId = 40942080589924
             }
             addItemToCart(variantId, 1)
