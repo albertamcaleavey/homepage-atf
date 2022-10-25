@@ -55,16 +55,16 @@
         <h4 class="ttu nm size-title" style="display: none; padding: 10px 0 5px 0">Size:</h4>
         <div class="free-pack-promo-options-container">
             <div class="size-option-container option clickable womens-option w-s/m" style="display: none">
-                <p class="tac nm ttu size-option">Small/Med</p>
+                <p class="tac nm ttu size-option">Small/Med<br>(US: 5 - 8)</p>
             </div>
             <div class="size-option-container option clickable womens-option w-m/l" style="display: none">
-                <p class="tac nm ttu size-option">Med/Large</p>
+                <p class="tac nm ttu size-option">Med/Large<br>(US: 8.5 - 11.5+)</p>
             </div>
             <div class="size-option-container option clickable mens-option m-m/l" style="display: none">
-                <p class="tac nm ttu size-option">Med/Large</p>
+                <p class="tac nm ttu size-option">Med/Large<br>(US: 7 - 10)</p>
             </div>
             <div class="size-option-container option clickable mens-option m-l/xl" style="display: none">
-                <p class="tac nm ttu size-option">Large/Extra-Large</p>
+                <p class="tac nm ttu size-option">Large/Extra-Large<br>(US: 10.5 - 14+)</p>
             </div>
         </div>
         <button class="add-to-cart ttu clickable" style="visibility: hidden; margin-top: 2vw"><h4 class="ttu nm text-natural">Add to Cart</h4></button>
@@ -80,6 +80,10 @@
             margin: 0 10px 10px 0;
             padding: 5px;
             width: 39.3%;
+        }
+        @media only screen and (max-width: 800px) {
+            .option { width: 50% }
+            .add-to-cart { margin-bottom: 20px }
         }
         .option > p {
             font-size: 12px;
@@ -120,7 +124,7 @@
         $('.gender-option-container').click(function() {
             $('.gender-option').removeClass('selected')
             $(this).children('.gender-option').addClass('selected')
-            $('.womens-option, .mens-option, .size-title').hide()
+            $('.womens-option, .mens-option').hide()
             let genderSelection = $(this).children('.gender-option').text()
             $('.style-title').show()
             if (genderSelection == 'Women') {
@@ -146,7 +150,7 @@
             $('.size-option').removeClass('selected')
             $(this).children('.size-option').addClass('selected')
             $('.add-to-cart').css('visibility', 'visible')
-            let sizeDetails = ''
+            {% comment %} let sizeDetails = ''
             if ($('.size-option.selected').text() == 'Small/Med') {
                 sizeDetails = 'Small / Medium (US: 5 - 8)'
                 console.log(sizeDetails)
@@ -160,8 +164,7 @@
                 sizeDetails = 'Size: Large / Extra-Large (US: 10.5 - 14+)'
                 console.log(sizeDetails)
             }
-            console.log()
-            $('.size-title').text('Size: ' + sizeDetails)
+            $('.size-title').text('Size: ' + sizeDetails) {% endcomment %}
         })
         
         function addItemToCart(variant_id, qty) {
