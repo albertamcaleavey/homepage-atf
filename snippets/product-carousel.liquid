@@ -1,0 +1,70 @@
+<section style="background-color: #afbde1">
+  <div class="product-carousel double-accent-padding">
+    <a href="/products/womens-v-neck?variant=40686068301924">
+      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+        <img src="{{ 'W7101-Front.jpg' | asset_url }}" loading="lazy" />
+        <h4 class="tac nm">Women's V Neck Sweater</h4>
+        <div class="ttu tac background-dark-teal text-white">Shop Now</div>
+      </div>
+    </a>
+    <a href="/products/womens-v-neck?variant=40686068301924">
+      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+        <img src="{{ 'W7225-Front.jpg' | asset_url }}" loading="lazy"/>
+        <h4 class="tac nm">Men's 1/4 Zip Sweater</h4>
+        <div class="ttu tac background-dark-teal text-white">Shop Now</div>
+      </div>
+    </a>
+    <a href="/products/womens-v-neck?variant=40686068301924">
+      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+        <img src="{{ 'F2206.jpg' | asset_url }}" loading="lazy"/>
+        <h4 class="tac nm">Women's Ombre Stripe Scarf</h4>
+        <div class="ttu tac background-dark-teal text-white">Shop Now</div>
+      </div> 
+    </a>
+    <a href="/products/womens-v-neck?variant=40686068301924">
+      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+        <img src="{{ '800x1200-Socks-Flat.png' | asset_url }}" loading="lazy"/>
+        <h4 class="tac nm">6 Pack Women's Crew</h4>
+        <div class="ttu tac background-dark-teal text-white">Shop Now</div>
+      </div>
+    </a>
+    <a href="/products/womens-v-neck?variant=40686068301924">
+      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+        <img src="{{ 'H-1002-M.jpg' | asset_url }}" loading="lazy"/>
+        <h4 class="tac nm">Shop Pacas Super Soft Hat</h4>
+        <div class="ttu tac background-dark-teal text-white">Shop Now</div>
+      </div>
+    </a>
+  </div>
+</section>
+<style>
+  .product-carousel { 
+    display: flex;
+    overflow: scroll;
+    white-space: nowrap;
+  }
+  .carousel-product {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    height: 33rem;
+    margin: 10px;
+  }
+  @media only screen and (max-width: 799px) {
+    .carousel-product {
+      width: 13rem;
+      height: 24rem;
+    }
+  }
+  .carousel-product > img {
+    border-radius: 10px;
+    width: 90%;
+  }
+  .carousel-product > div {
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+  }
+</style>

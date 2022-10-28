@@ -23,7 +23,7 @@
     </div>
   </section>
     {% comment %} SHOP MEN'S WOMEN'S SWEATERS {% endcomment %}
-    <section class="homepage-atf-ab-c" style="padding-top: 25px">
+    <section class="homepage-atf-ab-c" style="padding-top: 25px; display: none">
       <div class="flex-container-no" style="width: 100%">
         <a href="/collections/womens-socks" class="one-third background-dark-teal" style="border-radius: 10px; margin: 0 5px 0 10px; padding: 1rem">
           <h4 class="nm tac ttu text-white">Shop Women's</h4>
@@ -115,19 +115,19 @@
     <div class="one-third accent-padding" id="mobile-benefits-wrapper">
       <div class="accent-padding  mobile-benefits">
         <h3 class="ttu accent-crown nm">Hypoallergenic</h3>
-        <p>doesn't contain lanolin, which is a natural oil that causes allergies</p>
+        <p style="min-height: 53px;">doesn't contain lanolin, which is a natural oil that causes allergies</p>
       </div>
       <div class="accent-padding  mobile-benefits">
         <h3 class="ttu accent-crown nm">Thermoregulating</h3>
-        <p>alpaca fiber has a hollow core, which insulates heat in the winter and helps keep it cool in the summer</p>
+        <p style="min-height: 53px;">alpaca fiber has a hollow core, which insulates heat in the winter and helps keep it cool in the summer</p>
       </div>
       <div class="accent-padding mo  mobile-benefits">
         <h3 class="ttu accent-crown nm">Moisture Wicking</h3>
-        <p>doesn't absorb ba-a-a-ad moisture, unlike wool</p>
+        <p style="min-height: 53px;">doesn't absorb ba-a-a-ad moisture, unlike wool</p>
       </div>
       <div class="accent-padding mo  mobile-benefits">
         <h3 class="ttu accent-crown nm">Warmer Than Wool</h3>
-        <p>5x warmer than wool. Take that, sheeple!</p>
+        <p style="min-height: 53px;">5x warmer than wool. Take that, sheeple!</p>
       </div>
     </div>
     <script>
@@ -153,7 +153,7 @@
       <div class="selection-circle"></div>
     </div>
     <div class="one-third tac asfe">
-      <img src="{{'rebrand-paca.png' | asset_url}}" alt="Alpaca" id="alpaca-break">
+      <img src="{{'rebrand-paca.png' | asset_url}}" alt="Alpaca" id="alpaca-break" loading="lazy">
     </div>
     <div class="one-third accent-padding">
       <div class="accent-padding do">
@@ -168,47 +168,9 @@
   </section>
   <svg xmlns="http://www.w3.org/2000/svg" class="updated-topper"viewBox="0 100 1440 220"><path fill="#afbde1" fill-opacity="1" d="M0,224L40,224C80,224,160,224,240,197.3C320,171,400,117,480,128C560,139,640,213,720,229.3C800,245,880,203,960,176C1040,149,1120,139,1200,160C1280,181,1360,235,1400,261.3L1440,288L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z" ></path></svg>  
   {% comment %} PRODUCT CAROUSEL {% endcomment %}
-  <section style="background-color: #afbde1">
-    <div class="product-carousel double-accent-padding">
-      <a href="/products/womens-v-neck?variant=40686068301924">
-        <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
-          <img src="{{ 'W7101-Front.jpg' | asset_url }}"/>
-          <h4 class="tac nm">Women's V Neck Sweater</h4>
-          <div class="ttu tac background-dark-teal text-white">Shop Now</div>
-        </div>
-      </a>
-      <a href="/products/womens-v-neck?variant=40686068301924">
-        <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
-          <img src="{{ 'W7225-Front.jpg' | asset_url }}"/>
-          <h4 class="tac nm">Men's 1/4 Zip Sweater</h4>
-          <div class="ttu tac background-dark-teal text-white">Shop Now</div>
-        </div>
-      </a>
-      <a href="/products/womens-v-neck?variant=40686068301924">
-        <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
-          <img src="{{ 'F2206.jpg' | asset_url }}"/>
-          <h4 class="tac nm">Women's Ombre Stripe Scarf</h4>
-          <div class="ttu tac background-dark-teal text-white">Shop Now</div>
-        </div> 
-      </a>
-      <a href="/products/womens-v-neck?variant=40686068301924">
-        <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
-          <img src="{{ '800x1200-Socks-Flat.png' | asset_url }}"/>
-          <h4 class="tac nm">6 Pack Women's Crew</h4>
-          <div class="ttu tac background-dark-teal text-white">Shop Now</div>
-        </div>
-      </a>
-      <a href="/products/womens-v-neck?variant=40686068301924">
-        <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
-          <img src="{{ 'H-1002-M.jpg' | asset_url }}"/>
-          <h4 class="tac nm">Shop Pacas Super Soft Hat</h4>
-          <div class="ttu tac background-dark-teal text-white">Shop Now</div>
-        </div>
-      </a>
-    </div>
-  </section>
+  {% render 'product-carousel' %}
   
-  {% comment %} <section id="index-reviews" class="background-light-teal  accent-padding">
+ {%- comment -%} <section id="index-reviews" class="background-light-teal  accent-padding">
     <section id="our-faves" class="flex-container accent-padding">
       <div class="one-third tac accent-padding" id="our-faves-text">
         <h2 class="ttu nm">Our Faves.</h2>
@@ -260,8 +222,8 @@
       </div>
     </section>
 
-  </section>
-</section>
+  </section> {%- endcomment -%}
+{%- comment -%} </section>
 <section class="flex-container" id="photo-highlight-cta">
   <div class="half flex-container-no" id="winter-socks">
     <div class="double-accent-padding">
@@ -323,7 +285,7 @@
       </a>
     </div>
   </div>
-</section> {% endcomment %}
+</section> 
 
 <script>
   $('#our-faves .jcsa h4').click(function() {
@@ -333,7 +295,7 @@
     $('.index-product-preview-wrapper').hide();
     $(currentDisplay).show(); 
   })
-</script>
+</script> {%- endcomment -%}
 
 <script>on_index=true;</script>
 
@@ -355,29 +317,6 @@
 <!-- End Turn Tracking Beacon Code Do Not Remove -->
 
 <style>
-  .product-carousel { 
-    display: flex;
-    overflow: scroll;
-    white-space: nowrap;
-  }
-  .carousel-product {
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20rem;
-    height: 35rem;
-    margin: 10px;
-  }
-  .carousel-product > img {
-    border-radius: 10px;
-    width: 90%;
-  }
-  .carousel-product > div {
-    border-radius: 10px;
-    width: 100%;
-    padding: 10px;
-  }
   main { margin-bottom: -20px; width:  100vw; overflow-x: hidden;}
 
   @media only screen and (max-width: 799px) {
