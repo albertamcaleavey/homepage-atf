@@ -160,6 +160,17 @@ min-height: 180vw !important;
 </main>
 
 <style>
+  @media only screen and (min-width: 800px) and (max-width: 1400px) {
+    #slide-3-flow-ab {
+      grid-template-rows: repeat(2, 18vw)
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    #slide-3-flow-ab {
+      grid-template-columns: repeat(2, 35vw) !important;
+      grid-template-rows: repeat(3, 47vw) !important;
+    }
+  }
   .background-flow-teal2 {background-color: #8CD0D9; }
 @media only screen and (max-width:  799px) {
   #flow { height: 50vh; }
