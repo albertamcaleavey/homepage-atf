@@ -1741,9 +1741,8 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   margin: 5px;
   border-radius: 10px;
   white-space: normal;
-  max-width: 250px;
-  max-height: 250px;
-  background-size: contain;
+  max-width: 150px;
+  max-height: 150px;
   background-repeat: no-repeat;
   background-position: bottom;
   display: flex;
@@ -1781,15 +1780,22 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
   .assortment-product {
     height: 175px;
     min-width: 175px;
+    background-size: 120px;
   }
   .arrow-container { min-height: 150px }
 }
 @media only screen and (min-width: 1080px) {
   .assortment-product {
-    min-width: 18vw;
-    min-height: 18vw;
+    min-width: 15vw;
+    min-height: 15vw;
+    background-size: 120px;
   }
-  .arrow-container { min-height: 18vw }
+  .arrow-container { min-height: 15vw }
+}
+@media only screen and (min-width: 1280px) {
+  .assortment-product {
+    background-size: 10vw;
+  }
 }
 @media only screen and (min-width: 1600px) {
   #homepage-atf > div > h3 {
