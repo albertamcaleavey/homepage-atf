@@ -114,18 +114,47 @@ min-height: 180vw !important;
     <div class="half">
       <p class="text-white">Now that you know about our <br>wonderful alpacas, let's show you the goods!</p>
       <h1 class="ttu nm text-white">20% Off Your<br>First Order.</h1>
-  
-
-     <div class="flow-button background-red mo" style="margin: 20px auto;"> <a href="/" style="width: 100%; display: inline-block">
+      <div class="flow-button background-red mo" style="margin: 20px auto;"> <a href="/" style="width: 100%; display: inline-block">
         <h4 class="text-white tac ttu nm" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now - M');">Shop Now →</h4></a>
       </div>
         <div class="flow-button background-red do" style="margin-top: 20px;"> <a href="/" style="width: 100%; display: inline-block">
-        <h4 class="text-white tac ttu nm" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now - D');">Shop Now →</h4></a>
-      </div>
-                      <p class="tac back subscript clickable mo" data-slide="slide-2" data-bubble="2">←Back</p>
-
+          <h4 class="text-white tac ttu nm" onClick="ga('send', 'event', 'Education', 'Progress', 'Shop Now - D');">Shop Now →</h4></a>
+        </div>
+      <p class="tac back subscript clickable mo" data-slide="slide-2" data-bubble="2">←Back</p>
     </div>
     <div class="half">
+      <div id="slide-3-flow-ab" class="jcc" style="display: grid; grid-gap: 20px; grid-template-columns: repeat(3, 12vw); grid-template-rows: repeat(2, 15vw)">
+        <a href="/collections/womens-crew-socks">
+          <div class="jcc accent-padding" style="background-color: #70AAB4; background-image: url({{ 'WCrew-Socks.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: contain; background-position: top; background-repeat: no-repeat " >
+            <p class="subscript wfa nm text-white background-dark-teal tac" style="padding: 5px; border-radius: 5px; height: fit-content">Women's Crew Socks</p>
+          </div>
+        </a>
+        <a href="collections/mens-crew-socks">
+          <div class="jcc accent-padding" style="background-color: #70AAB4; background-image: url({{ 'MCrew-Socks.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: contain; background-position: top; background-repeat: no-repeat" >
+            <p class="subscript wfa nm text-white background-dark-teal tac" style="padding: 5px; border-radius: 5px; height: fit-content">Men's Crew Socks</p>
+          </div>
+        </a>
+        <a href="collections/kids-crew-socks">
+          <div class="jcc accent-padding" style="background-color: #70AAB4; background-image: url({{ 'Kids-CrewSocks.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: contain; background-position: top; background-repeat: no-repeat" >
+            <p class="subscript wfa nm text-white background-dark-teal tac" style="padding: 5px; border-radius: 5px; height: fit-content">Kid's Crew Socks</p>
+          </div>
+        </a>
+        <a href="collections/womens-sweaters">
+          <div class="jcc accent-padding" style="background-color: #70AAB4; background-image: url({{ 'Sweaters.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: cover;" >
+            <p class="subscript wfa nm text-white background-dark-teal tac" style="padding: 5px; border-radius: 5px; height: fit-content">Sweaters</p>
+          </div>
+        </a>
+        <a href="/collections/throw-blankets">
+          <div class="jcc accent-padding" style="background-color: #70AAB4; background-image: url({{ 'Throw.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: contain; background-position: top; background-repeat: no-repeat" >
+            <p class="subscript wfa nm text-white background-dark-teal tac" style="padding: 5px; border-radius: 5px; height: fit-content">Throw Blankets</p>
+          </div>
+        </a>
+        <a href="collections/womens-scarves">
+          <div class="jcc accent-padding" style="background-color: #70AAB4; background-image: url({{ 'Scarves.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: cover;" >
+            <p class="subscript wfa nm text-white background-dark-teal tac" style="padding: 5px; border-radius: 5px; height: fit-content">Scarves</p>
+          </div>
+        </a>
+    </div>
     </div>
   </section>
 </main>
@@ -195,7 +224,7 @@ margin-bottom: -50px; }
     background-repeat: no-repeat;
   }*/
   #slide-3  {
-    background-image: url("{{'FA22-Flow-gif.gif' | asset_url}}" );
+    {% comment %} background-image: url("{{'FA22-Flow-gif.gif' | asset_url}}" ); {% endcomment %}
     background-size: 50vw;
     background-repeat: no-repeat;
     background-position: center right;
