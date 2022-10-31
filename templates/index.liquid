@@ -2,62 +2,53 @@
   {% comment %} ATF {% endcomment %}
 
   {%- comment -%} ONE BANNER IMG {%- endcomment -%}
-  <div class="homepage-atf-ab jce" style="background-image: url({{ 'placeholder.png' | asset_img_url }}); background-size: cover; height: 40vh; display: flex; ">
+  <div class="homepage-atf-ab" style="background-image: url({{ 'placeholder.png' | asset_img_url }}); background-size: cover; height: 40vh; display: flex; ">
+    <div style="width: 50%"></div>
+    <div class="jcsb" style="display: flex; width: 50%">
+    <div style="margin-top: 5px">
+      <div class="col-preview-bubble clickable active" data-src="" ></div>
+      <div class="col-preview-bubble clickable" data-src="" ></div>
+      <div class="col-preview-bubble clickable" data-src="" ></div>
+    </div>
     <div class="fdc jcc" style="display: flex; margin-right: 5rem">
       <a href="/collections/womens-sweaters">
-        <div class="background-natural" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
-          <h4 class="nm tac">Shop Women's Sweaters</h4>
+        <div class="background-dark-purple" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
+          <h4 class="nm tac text-white">Shop Women's</h4>
         </div>
       </a>
       <a href="/collections/mens-sweaters">
-        <div class="background-natural" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
-          <h4 class="nm tac">Shop Men's Sweaters</h4>
+        <div class="background-dark-purple" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
+          <h4 class="nm tac text-white">Shop Men's</h4>
         </div>
       </a>
       <a href="/collections/new-arrivals">
-        <div class="background-natural" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
-          <h4 class="nm tac">Shop New Arrivals</h4>
+        <div class="background-dark-purple" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
+          <h4 class="nm tac text-white">Shop Sweaters</h4>
         </div>
       </a>
     </div>
+  </div>
   </div>
   {%- comment -%} THREE BOXES- BUNDLES, CREW, SWEATERS {%- endcomment -%}
   <section class="accent-padding" style="padding-top 0; padding-bottom: 0;">
     <div id="homepage-atf" class="jcc homepage-atf-ab" style="display: none"> 
       <div class="accent-padding flex-container-no fdc jce" style="background-image: url({{ 'HP-D-ATF-Bundle-model.jpg' | asset_url }}); background-size: cover">
-        {%- comment -%} <h3 class="nmt tac">Bundle Up and Save</h3> {%- endcomment -%}
         <div style="border-radius: 10px; padding: 10px" class="ttu tac background-dark-teal flex-container-no jcc">
           <a href="/pages/bundles"><p class="text-white nm" >Shop Bundles</p></a>
         </div>
       </div>
       <div class="accent-padding flex-container-no fdc jce" style="background-image: url({{ 'HP-D-ATF-WCrew.jpg' | asset_url }}); background-size: cover" >
-        {%- comment -%} <h3 class="nm tac">Stay Warm With Our Best Selling Crew Socks</h3> {%- endcomment -%}
         <div style="border-radius: 10px; padding: 10px" class="ttu tac background-dark-teal flex-container-no jcc">
-          <a href="/collections/womens-crew"><p class="text-white nm" >Shop Women's Crew Socks</p></a>
+          <a href="/collections/all-socks"><p class="text-white nm" >Shop Socks</p></a>
         </div>
       </div>
       <div class="accent-padding flex-container-no fdc jce" style="background-image: url({{ '20220929_Pacas_SOCIAL_MEDIA_3072.jpg' | asset_url }}); background-size: cover; background-position-x: center;" >
-        {%- comment -%} <h3 class="nm tac">Sweater Weather</h3> {%- endcomment -%}
         <div style="border-radius: 10px; padding: 10px" class="ttu tac background-dark-teal flex-container-no jcc">
           <a href="/collections/womens-sweaters"><p class="text-white nm">Shop Women's Sweaters</p></a>
         </div>
       </div>  
     </div>
   
-    {% comment %} SHOP MEN'S WOMEN'S SWEATERS {% endcomment %}
-    <section class="homepage-atf-ab" style="padding-top: 25px;">
-      <div class="flex-container-no" style="width: 100%">
-        <a href="/collections/womens-socks" class="one-third background-dark-teal" style="border-radius: 10px; margin: 0 5px 0 10px; padding: 1rem">
-          <h4 class="nm tac ttu text-white">Shop Women's</h4>
-        </a>
-        <a href="/collections/mens-socks" class="one-third background-dark-teal" style="border-radius: 10px; margin: 5px; padding: 1rem">
-          <h4 class="nm tac ttu text-white">Shop Men's</h4>
-        </a>
-        <a href="/collections/womens-sweaters" class="one-third background-dark-teal" style="border-radius: 10px; margin: 0 10px 0 5px; padding: 1rem">
-          <h4 class="nm tac ttu text-white">Shop Sweaters</h4>
-        </a>
-      </div>
-    </section>
     {%- comment -%} FULL ASSORTMENT {%- endcomment -%}
   <section class="double-accent-padding" style="max-width: fit-content; margin: auto; padding-top: 25px; padding-bottom: 0;">
     <h3 class="assortment-txt" style="margin: 0 0 0 10px" >Check Out Our Full Assortment!</h3>
@@ -65,7 +56,7 @@
       <div class="arrow-container flex-container-no" style="position: absolute; left: 15px;">
         <img class="left-arrow clickable" src="{{ "left-arrow.png" | asset_url }}" loading="lazy" style="height: 100px; display: none" >
       </div>
-      <div class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-LC.png' | asset_url }})">
+      <div id="first-assortment-product" class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-LC.png' | asset_url }})">
         <a href="/collections/womens-compression" class="fade-in gendered-product-title"><h4 class="nm tac">Low Cut Socks</h4></a>
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
@@ -93,7 +84,7 @@
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-teal assortment-product gendered accent-padding jcc">
+      <div class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WCrew.png' | asset_url }})">
         <a href="/collections/womens-crew" class="fade-in gendered-product-title"><h4 class="nm tac">Crew Socks</h4></a>
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
@@ -133,6 +124,9 @@
       firstAssortmentProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
       $(this).hide()
       $('.right-arrow').addClass('clickable').css('opacity', '100%')
+    })
+    $('.col-preview-bubble').click(function() {
+      console.log($(this))
     })
   </script>
 
