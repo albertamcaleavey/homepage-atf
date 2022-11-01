@@ -53,8 +53,8 @@
   <section class="double-accent-padding" style="max-width: fit-content; margin: auto; padding-top: 25px; padding-bottom: 0;">
     <h3 class="assortment-txt" style="margin: 0 0 0 10px" >Check Out Our Full Assortment!</h3>
     <div id="homepage-full-assortment">
-      <div class="arrow-container flex-container-no" style="position: absolute; left: 15px;">
-        <img class="left-arrow clickable" src="{{ "left-arrow.png" | asset_url }}" loading="lazy" style="height: 100px; display: none" >
+      <div class="arrow-container-atf flex-container-no" style="position: absolute; left: 15px;">
+        <img class="left-arrow-atf clickable" src="{{ "left-arrow.png" | asset_url }}" loading="lazy" style="height: 100px; display: none" >
       </div>
       <div id="first-assortment-product" class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-LC.png' | asset_url }})">
         <a href="/collections/womens-compression" class="fade-in gendered-product-title"><h4 class="nm tac">Low Cut Socks</h4></a>
@@ -92,8 +92,8 @@
       <div class="background-teal assortment-product accent-padding jcc" id="last-assortment-product">
         <a href="/collections/womens-scarves"><h4 class="nm tac">Shawls</h4></a>
       </div>
-      <div class="arrow-container flex-container-no" style="position: absolute; right: 15px;">
-        <img class="right-arrow clickable" src="{{ "right-arrow.png" | asset_url }}" loading="lazy" style="height: 100px" >
+      <div class="arrow-container-atf flex-container-no" style="position: absolute; right: 15px;">
+        <img class="right-arrow-atf clickable" src="{{ "right-arrow.png" | asset_url }}" loading="lazy" style="height: 100px" >
       </div>
     </div>
   </section>
@@ -115,18 +115,17 @@
     // scroll to show more products on arrow click
     let lastAssortmentProduct = document.getElementById('last-assortment-product')
     let firstAssortmentProduct = document.getElementById('first-assortment-product')
-    $('.right-arrow').click(function() {
+    $('.right-arrow-atf').click(function() {
       lastAssortmentProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
-      $('.left-arrow').show()
+      $('.left-arrow-atf').show()
       $(this).removeClass('clickable').css('opacity', '50%')
     })
-    $('.left-arrow').click(function() {
+    $('.left-arrow-atf').click(function() {
       firstAssortmentProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
       $(this).hide()
-      $('.right-arrow').addClass('clickable').css('opacity', '100%')
+      $('.right-arrow-atf').addClass('clickable').css('opacity', '100%')
     })
     $('.col-preview-bubble').click(function() {
-      console.log($(this))
     })
   </script>
 
@@ -384,4 +383,89 @@
     right: 20px;
     margin-top: -77px;
   }
+  /* HOMEPAGE ATF */
+#homepage-atf, #homepage-full-assortment {
+  display: flex;
+  overflow: scroll;
+  white-space: nowrap;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+#homepage-atf::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+#homepage-full-assortment::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+#homepage-atf > div { 
+  background-size: contain;
+  border-radius: 10px;
+  margin: 10px;
+  white-space: normal;
+  max-height: 500px;
+}
+#homepage-atf > div {
+  width: 30vw;
+  height: 30vw;
+}
+.assortment-product {
+  margin: 5px;
+  border-radius: 10px;
+  white-space: normal;
+  max-width: 150px;
+  max-height: 150px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  background-size: 150px;
+}
+.arrow-container-atf { max-height: 250px }
+@media only screen and (min-width: 800px) {
+  #homepage-atf > div > div { width: 70%; }
+  #homepage-atf > div > div > a > p { font-size: .9em; }
+  .assortment-product > a > p  { font-size: .9em; }
+}
+@media only screen and (max-width: 800px) {
+  #homepage-atf { padding: 15px; }
+  #homepage-atf > div > div { min-width: 250px }
+}
+@media only screen and (max-width: 1079px) {
+  #homepage-atf > div {
+    height: 400px;
+    min-width: 300px;
+  }
+  .assortment-product {
+    height: 175px;
+    min-width: 175px;
+    background-size: 120px;
+  }
+  .arrow-container-atf { min-height: 150px }
+}
+@media only screen and (min-width: 1080px) {
+  .assortment-product {
+    min-width: 15vw;
+    min-height: 15vw;
+    background-size: 120px;
+  }
+  .arrow-container-atf { min-height: 15vw }
+}
+@media only screen and (min-width: 1280px) {
+  .assortment-product { background-size: 10vw; }
+}
+@media only screen and (min-width: 1600px) {
+  #homepage-atf > div > h3 {
+    font-size: 2.2rem;
+  }
+  .assortment-txt {
+    font-size: 2.2rem;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 1310px) {
+  #homepage-atf > div > div {
+    min-height: 60px;
+  }
+} 
 </style>

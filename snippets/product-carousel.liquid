@@ -1,7 +1,10 @@
 <section style="background-color: #afbde1">
   <div class="product-carousel double-accent-padding">
+    <div class="arrow-container flex-container-no" style="position: absolute; left: 15px">
+      <img class="left-arrow clickable" src="{{ "left-arrow.png" | asset_url }}" loading="lazy" style="height: 100px; display: none">
+    </div>
     <a href="/products/womens-v-neck?variant=40686068301924">
-      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+      <div id="first-carousel-product" class="carousel-product carousel-scroll-point background-natural accent-padding flex-container-no jcsb">
         <img src="{{ 'W7101-Front.jpg' | asset_url }}" loading="lazy" />
         <h4 class="tac nm">Women's V Neck Sweater</h4>
         <div class="background-dark-teal"><p class="ttu tac text-white nm">Shop Now</p></div>
@@ -64,7 +67,7 @@
       </div>
     </a>
     <a href="/products/throw-blanket-style-3?variant=40365544472676">
-      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+      <div class="carousel-product carousel-scroll-point background-natural accent-padding flex-container-no jcsb">
         <img src="{{ 'throw-carousel.png' | asset_url }}" loading="lazy"/>
         <h4 class="tac nm">Blue Plaid Throw Blanket</h4>
         <div class="background-dark-teal"><p class="ttu tac text-white nm">Shop Now</p></div>
@@ -99,7 +102,7 @@
       </div>
     </a>
     <a href="/products/6-pack-womens-light-weight-crew-pacas-socks?variant=40314006765668">
-      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+      <div class="carousel-product carousel-scroll-point background-natural accent-padding flex-container-no jcsb">
         <img src="{{ 'wlw-crew-carousel.png' | asset_url }}" loading="lazy"/>
         <h4 class="tac nm">6 Pack Women's Light Weight Crew</h4>
         <div class="background-dark-teal"><p class="ttu tac text-white nm">Shop Now</p></div>
@@ -120,14 +123,42 @@
       </div>
     </a>
     <a href="/products/4-pack-mens-low-cut-paca-socks?variant=32605956669540">
-      <div class="carousel-product background-natural accent-padding flex-container-no jcsb">
+      <div id="last-carousel-product" class="carousel-product carousel-scroll-point background-natural accent-padding flex-container-no jcsb">
         <img src="{{ 'mlow-cut-carousel.png' | asset_url }}" loading="lazy"/>
         <h4 class="tac nm">4 Pack Men's Low Cut</h4>
         <div class="background-dark-teal"><p class="ttu tac text-white nm">Shop Now</p></div>
       </div>
     </a>
-  </div>
-</section>
+    <div class="arrow-container flex-container-no" style="position: absolute; right: 15px">
+      <img class="right-arrow clickable" src="{{ "right-arrow.png" | asset_url }}" loading="lazy" style="height: 100px;">
+    </div>
+  </section>
+<script>
+  $(document).ready(function() {
+    let lastCarouselProduct = document.getElementById('last-carousel-product')
+    let scrollToIndex = 5
+    $('.right-arrow').click(function() {
+      $('.left-arrow').show()
+      scrollToIndex += 5
+      console.log(scrollToIndex)
+      let nextCarouselProduct = Array.from($('.carousel-product'))[scrollToIndex]
+      console.log(nextCarouselProduct)
+      if (scrollToIndex >= 20) {
+        lastCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
+        $(this).removeClass('clickable').css('opacity', '50%')
+      }
+      nextCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
+    })
+    $('.left-arrow').click(function() {
+      $('.right-arrow').addClass('clickable').css('opacity', '100%')
+      scrollToIndex -= 5
+      console.log(scrollToIndex)
+      let nextCarouselProduct = Array.from($('.carousel-product'))[scrollToIndex]
+      console.log(nextCarouselProduct)
+      nextCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
+    })
+  })
+</script>
 <style>
   .product-carousel { 
     display: flex;
@@ -143,6 +174,10 @@
     height: 33rem;
     margin: 10px;
   }
+  @media only screen and (min-width: 800px) {
+    .carousel-product > h4 { font-size: 1.4rem }
+    .carousel-product > div > p { font-size: 14px; }
+  }
   @media only screen and (max-width: 799px) {
     .carousel-product {
       width: 13rem;
@@ -157,5 +192,9 @@
     border-radius: 10px;
     width: 100%;
     padding: 10px;
+  }
+  .carousel-product > h4 { white-space: normal; }
+  .arrow-container {
+    height: 33rem;
   }
 </style>
