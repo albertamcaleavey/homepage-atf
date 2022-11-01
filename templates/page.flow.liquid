@@ -17,20 +17,21 @@ var deviceType = /iPad/.test(navigator.userAgent) ? "t" : /Mobile|iP(hone|od)|An
 </style>
 <main id="flow">
   <div class="flow-nav-close flex-container-no">
-    <div class="jcc fw flex-container-no" style="margin-right: -40px">
-      <p class="back subscript clickable mo" style="display: none; margin-left: 5px" data-slide="slide-2" data-bubble="2">←Back</p>
-      <div class="slide-number flex-container-no jcc active clickable" data-slide="slide-1" id="bubble-1"><p class="nm">1</p></div>
-      <div class="slide-number flex-container-no jcc clickable" data-slide="slide-2" id="bubble-2"><p class="nm">2</p></div>
-      <div class="slide-number flex-container-no jcc clickable" data-slide="slide-3" id="bubble-3"><p class="nm">3</p></div>
-    </div>
-    <div class="" style="margin-right: 10px;">
+    <div class="jcsb fw flex-container-no" style="margin-right: -40px">
+      <p class="back subscript clickable" style="visibility: hidden; margin-left: 5px" data-slide="slide-2" data-bubble="2">←Back</p>
+      <div style="display: flex">
+        <div class="slide-number flex-container-no jcc active clickable" data-slide="slide-1" id="bubble-1"><p class="nm">1</p></div>
+        <div class="slide-number flex-container-no jcc clickable" data-slide="slide-2" id="bubble-2"><p class="nm">2</p></div>
+        <div class="slide-number flex-container-no jcc clickable" data-slide="slide-3" id="bubble-3"><p class="nm">3</p></div>
+      </div>
+    
       <div class="flow-close flex-container-no jcc"><p class="nm"><a href="/" onClick="ga('send', 'event', 'Education', 'Progress', 'Close');">⨉</a></p></div>
-    </div>
+  </div>
   </div>
   <section id="slide-1" class="flow-slide background-flow-teal continue double-accent-padding flex-container">
     <div class="half">
       <h1 class="text-white ttu nm">Oh Hey <br class="do">There! <br>I'm Paca.</h1>
-      <p class="">Did you know my fleece is so soft and<br> rare the Incas valued it more than gold?</p>
+      <p class="">Did you know my fleece is so soft and<br> rare that the Incas valued it more than gold?</p>
       <div class="flow-button background-red clickable">
         <h4 class="text-white tac ttu nm" onClick="ga('send', 'event', 'Education', 'Progress', 'Slide-1');">Cool, Let's Get Started! →</h4>
       </div>
@@ -136,7 +137,7 @@ min-height: 180vw !important;
           </div>
         </a>
         <a href="/collections/kids-crew">
-          <div class="jcc" style="background-color: #70AAB4; background-image: url({{ 'Kids-CrewSocks.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: 10vw; background-position: center; background-repeat: no-repeat; padding: 15px" >
+          <div class="jcc kids-crew" style="background-color: #70AAB4; background-image: url({{ 'Kids-CrewSocks.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: 10vw; background-position: center; background-repeat: no-repeat; padding: 15px" >
             <p class="subscript wfa nm text-white background-dark-teal tac aic jcc" style="padding: 5px; border-radius: 5px; height: fit-content; display: flex">Kid's Crew Socks</p>
           </div>
         </a>
@@ -146,7 +147,7 @@ min-height: 180vw !important;
           </div>
         </a>
         <a href="/collections/throw-blankets">
-          <div class="jcc" style="background-color: #70AAB4; background-image: url({{ 'Throw.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: 10vw; background-position: top; background-repeat: no-repeat; padding: 15px" >
+          <div class="jcc throw" style="background-color: #70AAB4; background-image: url({{ 'Throw.png' | asset_url }}); border-radius: 10px; height: 100%; display: flex; align-items: end; background-size: 11vw; background-position: top; background-repeat: no-repeat; padding: 15px" >
             <p class="subscript wfa nm text-white background-dark-teal tac aic jcc" style="padding: 5px; border-radius: 5px; height: fit-content; display: flex">Throw Blankets</p>
           </div>
         </a>
@@ -177,6 +178,8 @@ min-height: 180vw !important;
       grid-template-columns: repeat(2, 40vw) !important;
       grid-template-rows: repeat(3, 50vw) !important;
     }
+    .kids-crew { background-size: 25vw !important }
+    .throw { background-size: 35vw !important }
   }
   @media only screen and (max-width: 425px) {
     #slide-3-flow-ab > a > div > p {
@@ -296,24 +299,23 @@ margin-bottom: -50px; }
 </style>
 <script>
   $('.slide-number').click(function() {
-    if ($(this).attr('id') == 'bubble-3') {
-      $('.back').show()
+    if ($(this).attr('id') == 'bubble-3' && $(window).width() <= 500) {
+      $('.back').css('visibility', 'visible')
     } else {
-      $('.back').hide()
+      $('.back').css('visibility', 'hidden')
     }
-    $(this).siblings().removeClass('active'); 
+    $(this).siblings().removeClass('active');
     $(this).addClass('active')
     let slideNumber = "#" + $(this).data("slide")
     $('.flow-slide:visible').hide()
-    $(slideNumber).show(); 
+    $(slideNumber).show();
   });
     $('.back').click(function() {
-      $('.back').hide()
-    let slideNumber = "#" + $(this).data("slide")
-        let bubbleNumber = "#bubble-" + $(this).data("bubble")
-
-    $('.flow-slide:visible').hide()
-    $(slideNumber).show(); 
+      $(this).css('visibility', 'hidden')
+      let slideNumber = "#" + $(this).data("slide")
+      let bubbleNumber = "#bubble-" + $(this).data("bubble")
+      $('.flow-slide:visible').hide()
+      $(slideNumber).show();
       $('.slide-number').removeClass('active');
      $(bubbleNumber).addClass("active")
   });
