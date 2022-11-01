@@ -1,37 +1,58 @@
 <main id="index">
   {% comment %} ATF {% endcomment %}
-
+  <section id="atf-ab-banner-img">
   {%- comment -%} ONE BANNER IMG {%- endcomment -%}
-  <div class="homepage-atf-ab" style="background-image: url({{ 'placeholder.png' | asset_img_url }}); background-size: cover; height: 50vh; display: flex; ">
-    <div style="width: 50%"></div>
-    <div class="jcsb" style="display: flex; width: 50%">
-    <div style="margin-top: 5px">
-      <div class="col-preview-bubble clickable active" data-src="" ></div>
-      <div class="col-preview-bubble clickable" data-src="" ></div>
-      <div class="col-preview-bubble clickable" data-src="" ></div>
+    <div id="slide-1" class="atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 1.jpg' | asset_img_url: 'master' }}); background-size: contain; height: 50vh">
+      <div style="margin-right: 5vw">
+        <h3 class="ttu nm tac text-white">Crew Socks</h3>
+        <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 200">A sock for every occasion</p>
+        <div class="flex-container-md jes">
+          <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
+          <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
+        </div>
+      </div>
     </div>
-    <div class="fdc jcc" style="display: flex; margin-right: 5vw">
-      <a href="/collections/womens-sweaters">
-        <div class="background-dark-purple" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
-          <h4 class="nm tac text-white">Shop Women's</h4>
-        </div>
-      </a>
-      <a href="/collections/mens-sweaters">
-        <div class="background-dark-purple" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
-          <h4 class="nm tac text-white">Shop Men's</h4>
-        </div>
-      </a>
-      <a href="/collections/new-arrivals">
-        <div class="background-dark-purple" style="height: fit-content; border-radius: 10px; padding: 15px; margin: 10px 0">
-          <h4 class="nm tac text-white">Shop Sweaters</h4>
-        </div>
-      </a>
+  {% comment %} SLIDE 2 {% endcomment %}
+  <div id="slide-2" class="atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 2.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: none;">
+    <div style="margin-right: 5vw">
+      <h3 class="ttu nm tac text-white">Sweater Weather</h3>
+      <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 200">Must have styles for the season</p>
+      <div class="flex-container-md jes">
+        <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
+          <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
+      </div>
     </div>
   </div>
+  {% comment %} SLIDE 3 {% endcomment %}
+  <div id="slide-3" class="atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 3.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: none;">
+    <div style="margin-right: 5vw">
+      <h3 class="ttu nm tac text-white">Bundle Up and Save</h3>
+      <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 200">Shop our bundle collection and save up to XX%</p>
+      <div class="flex-container-md jes">
+        <a href="/pages/bundles"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Now</h4></a>
+      </div>
+    </div>
   </div>
+  <div style="margin-top: -20px; display: flex; justify-content: center; padding-bottom: 20px;">
+    <div id="1" class="col-preview-bubble clickable active" ></div>
+    <div id="2" class="col-preview-bubble clickable" ></div>
+    <div id="3" class="col-preview-bubble clickable"></div>
+  </div>
+</section>
+
+  <script>
+    $('.col-preview-bubble').click(function() {
+      $('.col-preview-bubble').removeClass('active')
+      $('.atf-slide').hide()
+      let selectedSlideId = $(this).attr('id')
+      $(this).addClass('active')
+      $('#slide-' + selectedSlideId).show()
+    })
+  </script>
+
   {%- comment -%} THREE BOXES- BUNDLES, CREW, SWEATERS {%- endcomment -%}
-  <section class="accent-padding" style="padding-top 0; padding-bottom: 0;">
-    <div id="homepage-atf" class="jcc homepage-atf-ab" style="display: none"> 
+  <section id="atf-ab-3-boxes" class="accent-padding" style="padding-top 0; padding-bottom: 0;">
+    <div id="homepage-atf" > 
       <div class="accent-padding flex-container-no fdc jce" style="background-image: url({{ 'HP-D-ATF-Bundle-model.jpg' | asset_url }}); background-size: cover">
         <div style="border-radius: 10px; padding: 10px" class="ttu tac background-dark-teal flex-container-no jcc">
           <a href="/pages/bundles"><p class="text-white nm" >Shop Bundles</p></a>
@@ -56,40 +77,40 @@
       <div class="arrow-container-atf flex-container-no" style="position: absolute; left: 15px;">
         <img class="left-arrow-atf clickable" src="{{ "left-arrow.png" | asset_url }}" loading="lazy" style="height: 100px; display: none" >
       </div>
-      <div id="first-assortment-product" class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-LC.png' | asset_url }})">
+      <div id="first-assortment-product" class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-LC.png' | asset_url }})">
         <a href="/collections/womens-compression" class="fade-in gendered-product-title"><h4 class="nm tac">Low Cut Socks</h4></a>
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-compression.png' | asset_url }})">
+      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-compression.png' | asset_url }})">
         <a href="/collections/womens-compression" class="fade-in gendered-product-title"><h4 class="nm tac">Compression Socks</h4></a>
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-teal assortment-product accent-padding jcc" style="background-image: url({{ 'Assortment-Throws.png' | asset_url }})">
+      <div class="background-light-teal assortment-product accent-padding jcc" style="background-image: url({{ 'Assortment-Throws.png' | asset_url }})">
         <a href="/collections/throw-blankets"><h4 class="nm tac">Throw Blankets</h4></a>
       </div>
-      <div class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-MGolf.png' | asset_url }})">
+      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-MGolf.png' | asset_url }})">
         <a href="/collections/womens-golf" class="fade-in gendered-product-title"><h4 class="nm tac">Golf Socks</h4></a>
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WSweaters.png' | asset_url }})">
+      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WSweaters.png' | asset_url }})">
         <a href="/collections/womens-sweaters" class="fade-in gendered-product-title"><h4 class="nm tac gendered-category">Sweaters</h4></a>
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WScarves.png' | asset_url }})">
+      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WScarves.png' | asset_url }})">
         <a href="/collections/womens-scarves" class="fade-in gendered-product-title"><h4 class="nm tac gendered-category">Scarves</h4></a>
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WCrew.png' | asset_url }})">
+      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WCrew.png' | asset_url }})">
         <a href="/collections/womens-crew" class="fade-in gendered-product-title"><h4 class="nm tac">Crew Socks</h4></a>
         <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-teal assortment-product accent-padding jcc" id="last-assortment-product">
+      <div class="background-light-teal assortment-product accent-padding jcc" id="last-assortment-product">
         <a href="/collections/womens-scarves"><h4 class="nm tac">Shawls</h4></a>
       </div>
       <div class="arrow-container-atf flex-container-no" style="position: absolute; right: 15px;">
@@ -124,8 +145,6 @@
       firstAssortmentProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
       $(this).hide()
       $('.right-arrow-atf').addClass('clickable').css('opacity', '100%')
-    })
-    $('.col-preview-bubble').click(function() {
     })
   </script>
 
@@ -427,10 +446,13 @@
   #homepage-atf > div > div { width: 70%; }
   #homepage-atf > div > div > a > p { font-size: .9em; }
   .assortment-product > a > p  { font-size: .9em; }
+  #atf-ab-3-boxes { display: none }
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 799px) {
   #homepage-atf { padding: 15px; }
   #homepage-atf > div > div { min-width: 250px }
+  #atf-ab-banner-img { display: none }
+  #atf-ab-3-boxes { display: block }
 }
 @media only screen and (max-width: 1079px) {
   #homepage-atf > div {
@@ -468,4 +490,5 @@
     min-height: 60px;
   }
 } 
+
 </style>

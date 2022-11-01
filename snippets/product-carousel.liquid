@@ -136,7 +136,7 @@
 <script>
   $(document).ready(function() {
     let lastCarouselProduct = document.getElementById('last-carousel-product')
-    let scrollToIndex = 5
+    var scrollToIndex = 5
     $('.right-arrow').click(function() {
       $('.left-arrow').show()
       scrollToIndex += 5
@@ -151,9 +151,9 @@
     })
     $('.left-arrow').click(function() {
       $('.right-arrow').addClass('clickable').css('opacity', '100%')
-      scrollToIndex -= 5
-      console.log(scrollToIndex)
-      let nextCarouselProduct = Array.from($('.carousel-product'))[scrollToIndex]
+      let leftScrollToIndex = scrollToIndex - 10
+      console.log(leftScrollToIndex)
+      let nextCarouselProduct = Array.from($('.carousel-product'))[leftScrollToIndex]
       console.log(nextCarouselProduct)
       nextCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
     })
