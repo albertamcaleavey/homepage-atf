@@ -41,6 +41,19 @@
 </section>
 
   <script>
+    $(document).ready(function() {
+      window.setInterval(function () {
+        // hide current slide
+        $('.atf-slide').each(function(idx, el) {
+          if ($(el).css('display') !== 'none') {
+            $(el).hide()
+            console.log($(el).next('.atf-image'))
+            $(el).next('.atf-image').show()
+          }
+        })
+        // show next slide
+      }, 3000)
+    })
     $('.col-preview-bubble').click(function() {
       $('.col-preview-bubble').removeClass('active')
       $('.atf-slide').hide()
@@ -490,5 +503,6 @@
     min-height: 60px;
   }
 } 
-
+.col-preview-bubble.active { background-color: white; }
+.col-preview-bubble { border: 1px solid white; }
 </style>
