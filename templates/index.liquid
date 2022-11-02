@@ -6,7 +6,7 @@
       {% comment %} editorial {% endcomment %}
       <div class="homepage-atf-editorial" style="margin-right: 5vw">
         <h3 class="ttu nm tac text-white">Crew Socks</h3>
-        <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 200">A sock for every occasion</p>
+        <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">A sock for every occasion</p>
         <div class="flex-container-md jes">
           <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
           <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
@@ -37,7 +37,7 @@
     {% comment %} editorial {% endcomment %}
     <div class="homepage-atf-editorial" style="margin-right: 5vw">
       <h3 class="ttu nm tac text-white">Sweater Weather</h3>
-      <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 200">Must have styles for the season</p>
+      <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Must have styles for the season</p>
       <div class="flex-container-md jes">
         <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
           <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
@@ -68,7 +68,7 @@
     {% comment %} editorial {% endcomment %}
     <div class="homepage-atf-editorial" style="margin-right: 5vw">
       <h3 class="ttu nm tac text-white">Bundle Up and Save</h3>
-      <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 200">Shop our bundle collection and save up to XX%</p>
+      <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Shop our bundle collection and save up to XX%</p>
       <div class="flex-container-md jes">
         <a href="/pages/bundles"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Now</h4></a>
       </div>
@@ -98,7 +98,7 @@
     <div id="3" class="col-preview-bubble clickable"></div>
   </div>
 </section>
-
+</section>
   <script>
     $(document).ready(function() {
       {% comment %} window.setInterval(function () {
@@ -129,26 +129,60 @@
     })
   </script>
 
-  {%- comment -%} THREE BOXES- BUNDLES, CREW, SWEATERS {%- endcomment -%}
-  <section id="atf-ab-3-boxes" class="accent-padding" style="padding-top 0; padding-bottom: 0;">
-    <div id="homepage-atf-mobile" > 
-      <div class="accent-padding flex-container-no fdc jce" style="background-image: url({{ 'HP-D-ATF-Bundle-model.jpg' | asset_url }}); background-size: cover; background-position: center;">
-        <div style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;" class="homepage-atf-button ttu tac flex-container-no jcc">
+  {%- comment -%} MOBILE ATF {%- endcomment -%}
+  <section id="homepage-atf-mobile" class="accent-padding" style="padding-top 0; padding-bottom: 0;">
+
+    {% comment %} BOX 1 {% endcomment %}
+      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'HP-D-ATF-Bundle-model.jpg' | asset_url }}); background-size: cover; background-position: center;">
+        {% comment %} editorial {% endcomment %}
+        <div class="homepage-atf-editorial" style="">
+          <h3 class="ttu nm tac text-white" style="font-size: x-large;">Crew Socks</h3>
+          <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">A sock for every occasion</p>
+          <div class="flex-container-md jes">
+            <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
+            <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
+          </div>
+        </div> 
+        {% comment %} button {% endcomment %}
+        <div class="homepage-atf-button ttu tac flex-container-no jcc" style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;">
           <a href="/pages/bundles"><p class="text-white nm" >Shop Bundles</p></a>
         </div>
       </div>
-      <div class="accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Crew-Socks.jpg' | asset_url }}); background-size: cover" >
-        <div style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;" class="homepage-atf-button ttu tac flex-container-no jcc">
+      
+      {% comment %} BOX 2 {% endcomment %}
+      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Crew-Socks.jpg' | asset_url }}); background-size: cover" >
+        {% comment %} editorial {% endcomment %}
+        <div class="homepage-atf-editorial" style="">
+          <h3 class="ttu nm tac text-white" style="font-size: x-large;">Sweater Weather</h3>
+          <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Must have styles for the season</p>
+          <div class="flex-container-md jes">
+            <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
+            <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
+          </div>
+        </div>
+        {% comment %} button {% endcomment %}
+        <div class="homepage-atf-button ttu tac flex-container-no jcc" style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;" >
           <a href="/collections/all-socks"><p class="text-white nm" >Shop Socks</p></a>
         </div>
       </div>
-      <div class="accent-padding flex-container-no fdc jce" style="background-image: url({{ 'ATF-Sweaters.jpg' | asset_url }}); background-size: cover; background-position: center;" >
-        <div style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;" class="homepage-atf-button ttu tac flex-container-no jcc">
+
+      {% comment %} BOX 3 {% endcomment %}
+      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'ATF-Sweaters.jpg' | asset_url }}); background-size: cover; background-position: center;" >
+        {% comment %} editorial {% endcomment %}
+        <div class="homepage-atf-editorial" style="">
+          <h3 class="ttu nm tac text-white" style="font-size: x-large;">Bundle Up and Save</h3>
+          <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Shop our bundle collection and save up to XX%</p>
+          <div class="flex-container-md jes">
+            <a href="/pages/bundles"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Now</h4></a>
+          </div>
+        </div>
+        {% comment %} button {% endcomment %}
+        <div class="homepage-atf-button ttu tac flex-container-no jcc" style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;" >
           <a href="/collections/womens-sweaters"><p class="text-white nm">Shop Sweaters</p></a>
         </div>
-      </div>  
+ 
     </div>
-  
+  </section>
     {%- comment -%} FULL ASSORTMENT {%- endcomment -%}
   <section class="double-accent-padding" style="max-width: fit-content; margin: auto; padding-top: 25px; padding-bottom: 0;">
     <h3 class="assortment-txt" style="margin: 0 0 0 10px" >Check Out Our Full Assortment!</h3>
@@ -197,7 +231,7 @@
       </div>
     </div>
   </section>
-</section>
+
   <script>
     // show links to men's and women's when a user hovers on a product category
     $('.assortment-product.gendered').mouseover(function() {
@@ -525,13 +559,13 @@
   #homepage-atf-mobile > div > div { width: 70%; }
   #homepage-atf > div > div > a > p { font-size: .9em; }
   .assortment-product > a > p  { font-size: .9em; }
-  #atf-ab-3-boxes { display: none }
+  #homepage-atf-mobile { display: none }
 }
 @media only screen and (max-width: 799px) {
   #homepage-atf-mobile { padding: 15px; }
   #homepage-atf-mobile > div > div { min-width: 250px }
   #homepage-atf-desktop { display: none }
-  #atf-ab-3-boxes { display: block }
+  #homepage-atf-mobile { display: flex }
 }
 @media only screen and (max-width: 1079px) {
   #homepage-atf-mobile > div {
@@ -571,5 +605,5 @@
 } 
 .col-preview-bubble.active { background-color: white; }
 .col-preview-bubble { border: 1px solid white; }
-.homepage-atf-editorial { display: none }
+.homepage-atf-button { display: none }
 </style>
