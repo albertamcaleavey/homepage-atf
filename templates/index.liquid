@@ -2,7 +2,7 @@
   {% comment %} ATF {% endcomment %}
   <section id="atf-ab-banner-img">
   {%- comment -%} ONE BANNER IMG {%- endcomment -%}
-    <div id="slide-1" class="atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 1.jpg' | asset_img_url: 'master' }}); background-size: contain; height: 50vh">
+    <div id="slide-1" class="atf-slide flex-container-md jce aic active" style="background-image: url({{ 'FW-Hero-Slide 1.jpg' | asset_img_url: 'master' }}); background-size: contain; height: 50vh">
       <div style="margin-right: 5vw">
         <h3 class="ttu nm tac text-white">Crew Socks</h3>
         <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 200">A sock for every occasion</p>
@@ -33,7 +33,7 @@
       </div>
     </div>
   </div>
-  <div style="margin-top: -20px; display: flex; justify-content: center; padding-bottom: 20px;">
+  <div class="col-preview-bubble-container" style="margin-top: -20px; display: flex; justify-content: center; padding-bottom: 20px;">
     <div id="1" class="col-preview-bubble clickable active" ></div>
     <div id="2" class="col-preview-bubble clickable" ></div>
     <div id="3" class="col-preview-bubble clickable"></div>
@@ -43,23 +43,30 @@
   <script>
     $(document).ready(function() {
       window.setInterval(function () {
-        // hide current slide
-        $('.atf-slide').each(function(idx, el) {
-          if ($(el).css('display') !== 'none') {
-            $(el).hide()
-            console.log($(el).next('.atf-image'))
-            $(el).next('.atf-image').show()
-          }
-        })
-        // show next slide
-      }, 3000)
+        // change active slide
+        let currentSlide = $('#atf-ab-banner-img').children('.active')
+        let nextSlide = $('#atf-ab-banner-img').children('.active').next()
+        currentSlide.removeClass('active').hide()
+        // change active bubble
+        let currentBubble = $('.col-preview-bubble-container').children('.active')
+        let nextBubble = $('.col-preview-bubble-container').children('.active').next()
+        currentBubble.removeClass('active')
+        nextBubble.addClass('active')
+        // go back to slide 1 at then end of the slides
+        if (currentSlide.attr('id') == 'slide-3') {
+          $('#slide-1').addClass('active').show()
+          $('.col-preview-bubble#1').addClass('active')
+        } else {
+          nextSlide.addClass('active').show()
+        }
+      }, 4000)
     })
     $('.col-preview-bubble').click(function() {
       $('.col-preview-bubble').removeClass('active')
-      $('.atf-slide').hide()
+      $('.atf-slide').hide().removeClass('active')
       let selectedSlideId = $(this).attr('id')
       $(this).addClass('active')
-      $('#slide-' + selectedSlideId).show()
+      $('#slide-' + selectedSlideId).show().addClass('active')
     })
   </script>
 
