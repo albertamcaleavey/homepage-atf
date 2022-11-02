@@ -1,15 +1,20 @@
 <main id="index">
   {% comment %} ATF {% endcomment %}
-  <section id="homepage-atf-desktop">
-    
+  <section id="homepage-atf-desktop" style="margin-bottom: 20px">
+    <div class="col-preview-bubble-container homepage-atf-editorial" style="margin-bottom: -50px; display: flex; justify-content: center; padding-bottom: 20px;">
+      <div id="1" class="col-preview-bubble homepage-atf-editorial clickable active" ></div>
+      <div id="2" class="col-preview-bubble homepage-atf-editorial clickable" ></div>
+      <div id="3" class="col-preview-bubble homepage-atf-editorial clickable"></div>
+    </div>
     <div id="slide-1" class="atf-slide flex-container-md jce aic active" style="background-image: url({{ 'FW-Hero-Slide 1.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh">
       {% comment %} editorial {% endcomment %}
-      <div class="homepage-atf-editorial" style="margin-right: 5vw">
+      <div class="homepage-atf-editorial" style="margin-right: 3vw">
         <h3 class="ttu nm tac text-white">Crew Socks</h3>
         <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">A sock for every occasion</p>
         <div class="flex-container-md jes">
-          <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
-          <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
+          <a href="/collections/womens-socks"><div style="border-bottom: 2px solid white; margin: 0 10px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
+          <a href="/collections/mens-socks"><div style="border-bottom: 2px solid white;; margin: 0 10px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
+          <a href="/pages/bundles"><div style="border-bottom: 2px solid white;; margin: 0 10px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Bundles</p></div></a>
         </div>
       </div> 
       {% comment %} button {% endcomment %}
@@ -35,12 +40,13 @@
   {% comment %} SLIDE 2 {% endcomment %}
   <div id="slide-2" class="atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 2.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: none;">
     {% comment %} editorial {% endcomment %}
-    <div class="homepage-atf-editorial" style="margin-right: 5vw">
+    <div class="homepage-atf-editorial" style="width: 50%">
       <h3 class="ttu nm tac text-white">Sweater Weather</h3>
       <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Must have styles for the season</p>
-      <div class="flex-container-md jes">
-        <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
-          <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
+      <div class="flex-container-md jcc">
+        <a href="/collections/womens-socks"><div style="border-bottom: 2px solid white; margin: 0 10px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
+        <a href="/collections/mens-socks"><div style="border-bottom: 2px solid white; margin: 0 10px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
+        <a href="/pages/bundles"><div style="border-bottom: 2px solid white; margin: 0 10px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Bundles</p></div></a>
       </div>
     </div>
     {% comment %} button {% endcomment %}
@@ -66,11 +72,11 @@
   {% comment %} SLIDE 3 {% endcomment %}
   <div id="slide-3" class="atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 3.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: none;">
     {% comment %} editorial {% endcomment %}
-    <div class="homepage-atf-editorial" style="margin-right: 5vw">
+    <div class="homepage-atf-editorial" style="width: 50%">
       <h3 class="ttu nm tac text-white">Bundle Up and Save</h3>
       <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Shop our bundle collection and save up to XX%</p>
-      <div class="flex-container-md jes">
-        <a href="/pages/bundles"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Now</h4></a>
+      <div class="flex-container-md jcc">
+        <a href="/pages/bundles"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Now</p></div></a>
       </div>
     </div>
     {% comment %} button {% endcomment %}
@@ -92,11 +98,20 @@
       </a>
     </div>
   </div>
-  <div class="col-preview-bubble-container" style="margin-top: -20px; display: flex; justify-content: center; padding-bottom: 20px;">
-    <div id="1" class="col-preview-bubble clickable active" ></div>
-    <div id="2" class="col-preview-bubble clickable" ></div>
-    <div id="3" class="col-preview-bubble clickable"></div>
+
+  {% comment %} STATIC {% endcomment %}
+  <div class="homepage-atf-static jcc aic" style="background-image: url({{ 'Static-Desktop.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: flex">
+    <div>
+      <h2 class="nm ttu tac text-white">Alpaca Apparel</h2>
+      <p class="nm tac text-white" style="padding: 15px 0">The softest alpaca lorem ipsum</p>
+      <div style="display: flex" class="jcc">
+        <a href="/collections/womens-socks"><h4 class="nm ttu tac tdu text-white" style="font-weight: 100; padding: 0 35px;">Shop Women</h4></a>
+        <a href="/collections/mens-socks"><h4 class="nm ttu tac tdu text-white" style="font-weight: 100; padding: 0 35px;">Shop Men</h4></a>
+        <a href="/pages/bundles"><h4 class="nm ttu tac tdu text-white" style="font-weight: 100; padding: 0 35px;">Shop Bundles</h4></a>
+      </div>
+    <div>
   </div>
+
 </section>
 </section>
   <script>
@@ -131,16 +146,16 @@
 
   {%- comment -%} MOBILE ATF {%- endcomment -%}
   <section id="homepage-atf-mobile" class="accent-padding" style="padding-top 0; padding-bottom: 0;">
-
+    <div class="homepage-atf-mobile-scroll">
     {% comment %} BOX 1 {% endcomment %}
       <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'HP-D-ATF-Bundle-model.jpg' | asset_url }}); background-size: cover; background-position: center;">
         {% comment %} editorial {% endcomment %}
-        <div class="homepage-atf-editorial" style="">
+        <div class="homepage-atf-editorial" >
           <h3 class="ttu nm tac text-white" style="font-size: x-large;">Crew Socks</h3>
           <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">A sock for every occasion</p>
           <div class="flex-container-md jes">
-            <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
-            <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
+            <a href="/collections/womens-socks"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
+            <a href="/collections/mens-socks"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
           </div>
         </div> 
         {% comment %} button {% endcomment %}
@@ -152,12 +167,12 @@
       {% comment %} BOX 2 {% endcomment %}
       <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Crew-Socks.jpg' | asset_url }}); background-size: cover" >
         {% comment %} editorial {% endcomment %}
-        <div class="homepage-atf-editorial" style="">
+        <div class="homepage-atf-editorial" >
           <h3 class="ttu nm tac text-white" style="font-size: x-large;">Sweater Weather</h3>
           <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Must have styles for the season</p>
           <div class="flex-container-md jes">
-            <a href="/collections/womens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Women</h4></a>
-            <a href="/collections/mens-socks"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Men</h4></a>
+            <a href="/collections/womens-socks"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
+            <a href="/collections/mens-socks"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
           </div>
         </div>
         {% comment %} button {% endcomment %}
@@ -169,82 +184,105 @@
       {% comment %} BOX 3 {% endcomment %}
       <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'ATF-Sweaters.jpg' | asset_url }}); background-size: cover; background-position: center;" >
         {% comment %} editorial {% endcomment %}
-        <div class="homepage-atf-editorial" style="">
+        <div class="homepage-atf-editorial" >
           <h3 class="ttu nm tac text-white" style="font-size: x-large;">Bundle Up and Save</h3>
           <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Shop our bundle collection and save up to XX%</p>
           <div class="flex-container-md jes">
-            <a href="/pages/bundles"><h4 class="ttu nm tac tdu text-white" style="font-weight: 100">Shop Now</h4></a>
+            <a href="/pages/bundles"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Now</p></div></a>
           </div>
         </div>
         {% comment %} button {% endcomment %}
         <div class="homepage-atf-button ttu tac flex-container-no jcc" style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;" >
           <a href="/collections/womens-sweaters"><p class="text-white nm">Shop Sweaters</p></a>
         </div>
- 
     </div>
+  </div>
+
+  {% comment %} MOBILE STATIC {% endcomment %}
+  <div class="homepage-atf-mobile-static wfa" style="background-image: url({{ 'M-Static-Hero.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: flex">
+    <div style="display: grid; place-content: center; width: 100%">
+      <h2 class="nm ttu tac text-white">Alpaca Apparel</h2>
+      <p class="nm tac text-white" style="padding: 15px 0">The softest alpaca lorem ipsum</p>
+      <div style="display: flex" class="jcc">
+        <a href="/collections/womens-socks"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
+        <a href="/collections/mens-socks"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
+        <a href="/pages/bundles"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Bundles</p></div></a>
+      </div>
+  </div>
   </section>
+
     {%- comment -%} FULL ASSORTMENT {%- endcomment -%}
   <section class="double-accent-padding" style="max-width: fit-content; margin: auto; padding-top: 25px; padding-bottom: 0;">
-    <h3 class="assortment-txt" style="margin: 0 0 0 10px" >Check Out Our Full Assortment!</h3>
+    {% comment %} <h3 class="assortment-txt" style="margin: 0 0 0 10px; font-weight: 100;">Check out our full assortment!</h3> {% endcomment %}
     <div id="homepage-full-assortment">
       <div class="arrow-container-atf flex-container-no" style="position: absolute; left: 15px;">
-        <img class="left-arrow-atf clickable" src="{{ "left-arrow.png" | asset_url }}" loading="lazy" style="height: 100px; display: none" >
+        <img class="left-arrow-atf clickable" src="{{ "left-arrow.png" | asset_url }}" loading="lazy" style="height: 75px; display: none" >
       </div>
-      <div id="first-assortment-product" class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-LC.png' | asset_url }})">
-        <a href="/collections/womens-compression" class="fade-in gendered-product-title"><h4 class="nm tac">Low Cut Socks</h4></a>
-        <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
-        <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
+      <div id="first-assortment-product" class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WCrew.png' | asset_url }});">
+        <a href="/collections/womens-crew" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">Crew Socks</h4></a>
+        <a href="/collections/womens-crew" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
+        <a href="/collections/mens-crew" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-compression.png' | asset_url }})">
-        <a href="/collections/womens-compression" class="fade-in gendered-product-title"><h4 class="nm tac">Compression Socks</h4></a>
-        <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
-        <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
+      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-LC.png' | asset_url }})">
+        <a href="/collections/womens-compression" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">Low Cut Socks</h4></a>
+        <a href="/collections/womens-crew" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
+        <a href="/collections/mens-crew" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-light-teal assortment-product accent-padding jcc" style="background-image: url({{ 'Assortment-Throws.png' | asset_url }})">
-        <a href="/collections/throw-blankets"><h4 class="nm tac">Throw Blankets</h4></a>
+      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-compression.png' | asset_url }})">
+        <a href="/collections/womens-compression" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">Compression Socks</h4></a>
+        <a href="/collections/womens-crew" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
+        <a href="/collections/mens-crew" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-MGolf.png' | asset_url }})">
-        <a href="/collections/womens-golf" class="fade-in gendered-product-title"><h4 class="nm tac">Golf Socks</h4></a>
-        <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
-        <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
+      <div class="background-light-teal assortment-product" style="background-image: url({{ 'Assortment-No-Show.png' | asset_url }})">
+        <a href="/collections/womens-no-show" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">No Show Socks</h4></a>
+        <a href="/collections/womens-no-show" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Now</p></a>
       </div>
-      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WSweaters.png' | asset_url }})">
-        <a href="/collections/womens-sweaters" class="fade-in gendered-product-title"><h4 class="nm tac gendered-category">Sweaters</h4></a>
-        <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
-        <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
+      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WSweaters.png' | asset_url }})">
+        <a href="/collections/womens-sweaters" class="assortment-product-title"><h4 class="nm gendered-category ttu" style="font-weight: 100;">Sweaters</h4></a>
+        <a href="/collections/womens-crew" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
+        <a href="/collections/mens-crew" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
-      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WScarves.png' | asset_url }})">
-        <a href="/collections/womens-scarves" class="fade-in gendered-product-title"><h4 class="nm tac gendered-category">Scarves</h4></a>
-        <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
-        <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
+      <div class="background-light-teal assortment-product" style="background-image: url({{ 'Assortment-Throws.png' | asset_url }})">
+        <a href="/collections/throw-blankets" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">Throw Blankets</h4></a>
+        <a href="/collections/throw-blankets" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Now</p></a>
       </div>
-      <div class="background-light-teal assortment-product gendered accent-padding jcc" style="background-image: url({{ 'Assortment-WCrew.png' | asset_url }})">
-        <a href="/collections/womens-crew" class="fade-in gendered-product-title"><h4 class="nm tac">Crew Socks</h4></a>
-        <a href="/collections/womens-crew" class="fade-in gendered-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
-        <a href="/collections/mens-crew" class="fade-in gendered-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
-      </div>
-      <div class="background-light-teal assortment-product accent-padding jcc" id="last-assortment-product">
-        <a href="/collections/womens-scarves"><h4 class="nm tac">Shawls</h4></a>
+      <div id="last-assortment-product" class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WScarves.png' | asset_url }})">
+        <a href="/collections/womens-scarves" class="assortment-product-title"><h4 class="nm gendered-category ttu" style="font-weight: 100;">Scarves</h4></a>
+        <a href="/collections/womens-crew" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
+        <a href="/collections/mens-crew" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
       </div>
       <div class="arrow-container-atf flex-container-no" style="position: absolute; right: 15px;">
-        <img class="right-arrow-atf clickable" src="{{ "right-arrow.png" | asset_url }}" loading="lazy" style="height: 100px" >
+        <img class="right-arrow-atf clickable" src="{{ "right-arrow.png" | asset_url }}" loading="lazy" style="height: 75px" >
       </div>
-    </div>
   </section>
 
   <script>
     // show links to men's and women's when a user hovers on a product category
-    $('.assortment-product.gendered').mouseover(function() {
-      $(this).children('.gendered-product-title').hide()
-      $(this).css('justify-content', 'center').addClass('fdc')
-      $(this).css('opacity', '70%')
-      $(this).children('.gendered-product-link').show()
+    $('.assortment-product').mouseover(function() {
+      if ($(this).hasClass('gendered')) {
+        $(this).children('.assortment-product-title').hide()
+        $(this).css('justify-content', 'center').addClass('fdc')
+        $(this).css('background-color', 'rgb(160,219,227,.7)')
+        $(this).children('.assortment-product-link').show()
+      } else {
+        $(this).children('.assortment-product-title').hide()
+        $(this).css('justify-content', 'center').addClass('fdc')
+        $(this).css('background-color', 'rgb(160,219,227,.7)')
+        $(this).children('.assortment-product-link').show()
+      }
     })
-    $('.assortment-product.gendered').mouseleave(function() {
+    $('.assortment-product').mouseleave(function() {
+      if ($(this).hasClass('gendered')) {
       $(this).css('justify-content', '').removeClass('fdc')
-      $(this).css('opacity', '100%')
-      $(this).children('.gendered-product-link').hide()
-      $(this).children('.gendered-product-title').show()
+      $(this).css('background-color', 'rgb(160,219,227,1)')
+      $(this).children('.assortment-product-link').hide()
+      $(this).children('.assortment-product-title').show()
+    } else {
+      $(this).css('justify-content', '').removeClass('fdc')
+      $(this).css('background-color', 'rgb(160,219,227,1)')
+      $(this).children('.assortment-product-link').hide()
+      $(this).children('.assortment-product-title').show()
+    }
     })
     // scroll to show more products on arrow click
     let lastAssortmentProduct = document.getElementById('last-assortment-product')
@@ -327,133 +365,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" class="updated-topper"viewBox="0 100 1440 220"><path fill="#afbde1" fill-opacity="1" d="M0,224L40,224C80,224,160,224,240,197.3C320,171,400,117,480,128C560,139,640,213,720,229.3C800,245,880,203,960,176C1040,149,1120,139,1200,160C1280,181,1360,235,1400,261.3L1440,288L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z" ></path></svg>  
   {% comment %} PRODUCT CAROUSEL {% endcomment %}
   {% render 'product-carousel' %}
-  
- {%- comment -%} <section id="index-reviews" class="background-light-teal  accent-padding">
-    <section id="our-faves" class="flex-container accent-padding">
-      <div class="one-third tac accent-padding" id="our-faves-text">
-        <h2 class="ttu nm">Our Faves.</h2>
-        <p>Our clothing will make your older clothes wish they were friends with an alpaca or two. The best part? We give back to our alpacas and their farmers, so they can have a truly sustainable future. It doesn't get any cozier!</p>
-        <a href="/collections/all-socks">
-          <div class="standard-button animated-button background-red ma do">
-            <h2 class="text-natural ttu tac">Shop Now</h2>
-          </div>
-        </a>
-      </div>
-      <div class="two-thirds accent-padding">
-        <div class="flex-container-no jcsa fw">
-          <div class="accent-padding tac"><h4 class="ttu">Throws</h4></div>
-          <div class="accent-padding tac"><h4 class="ttu  actives">Socks</h4></div>
-          <div class="accent-padding tac"><h4 class="ttu">Wraps</h4></div>
-        </div>
-        <div class="fw flex-container index-product-preview-wrapper" id="socks-quick">
-          <div class="one-third index-product-preview">
-          </div>
-          <div class="one-third index-product-preview">
-          </div>
-          <div class="one-third index-product-preview">
-          </div>
-          <div class="one-third index-product-preview" style="display: none;">
-          </div>
-        </div>
-        <div class="fw flex-container index-product-preview-wrapper" id="throws-quick" style="display: none;">
-          <div class="one-third index-product-preview">
-          </div>
-          <div class="one-third index-product-preview">
-          </div>
-          <div class="one-third index-product-preview background-red text-natural accent-padding prev-product-form">
-            <h4 class="ttu text-natural nm">Pacas Throw <br>Blankets</h5>
-            <h2 class="text-dark-red nm">$150.00</h2>
-            <div class="border-natural" style="padding: 10px;"><a href="/collections/throw-blankets"><h4 class="tac ttu nm fw text-natural">View Product</h4></a></div>
-          </div>
-        </div>
-        <div class="fw flex-container index-product-preview-wrapper" id="wraps-quick" style="display: none;">
-          <div class="one-third index-product-preview">
-          </div>
-          <div class="one-third index-product-preview">
-          </div>
-          <div class="one-third index-product-preview background-red text-natural accent-padding prev-product-form">
-            <h4 class="ttu text-natural nm">Pacas <br>Wraps</h5>
-            <h2 class="text-dark-red nm">$85.00</h2>
-            <div class="border-natural" style="padding: 10px;"><a href="/collections/summer-wraps"><h4 class="tac ttu nm fw text-natural">View Product</h4></a></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-  </section> {%- endcomment -%}
-{%- comment -%} </section>
-<section class="flex-container" id="photo-highlight-cta">
-  <div class="half flex-container-no" id="winter-socks">
-    <div class="double-accent-padding">
-      <h3 class="text-natural ttu nm tac">New<br class="do"> Crew</br> Socks</h3>
-    <a href="/collections/womens-crew">
-      <div class="animated-button-red ma animated-button">
-        <h2 class="text-natural ttu tac">Shop Now</h2>
-      </div>
-    </a>
-  </div>
-  </div>
-<div class="side-border"></div>
-<div class="half flex-container-no" id="find-your-match">
-  <div class="double-accent-padding">
-    <h3 class="text-natural ttu nm tac">New</br> Low Cuts</h3>
-  <a href="/collections/womens-low-cut">
-    <div class="animated-button-red animated-button ma">
-      <h2 class="text-natural ttu tac">Show Now</h2>
-    </div>
-  </a>
-</div>
-</div>
-</section>
-<section class="flex-container" id="final-cta">
-  <div class="background-teal one-third flex-container-no fdc">
-    <a href="/collections/men">
-      <h1 class="tac text-dark-teal ttu nmb">Men</h1>
-    </a>
-    <svg xmlns="http://www.w3.org/2000/svg" class=""viewBox="0 55 480 220"><path fill="#f04e4c" fill-opacity="1" d="M0,160L14.1,138.7C28.2,117,56,75,85,74.7C112.9,75,141,117,169,144C197.6,171,226,181,254,165.3C282.4,149,311,107,339,80C367.1,53,395,43,424,74.7C451.8,107,480,181,508,181.3C536.5,181,565,107,593,90.7C621.2,75,649,117,678,122.7C705.9,128,734,96,762,117.3C790.6,139,819,213,847,213.3C875.3,213,904,139,932,144C960,149,988,235,1016,234.7C1044.7,235,1073,149,1101,138.7C1129.4,128,1158,192,1186,197.3C1214.1,203,1242,149,1271,138.7C1298.8,128,1327,160,1355,181.3C1383.5,203,1412,213,1426,218.7L1440,224L1440,320L1425.9,320C1411.8,320,1384,320,1355,320C1327.1,320,1299,320,1271,320C1242.4,320,1214,320,1186,320C1157.6,320,1129,320,1101,320C1072.9,320,1045,320,1016,320C988.2,320,960,320,932,320C903.5,320,875,320,847,320C818.8,320,791,320,762,320C734.1,320,706,320,678,320C649.4,320,621,320,593,320C564.7,320,536,320,508,320C480,320,452,320,424,320C395.3,320,367,320,339,320C310.6,320,282,320,254,320C225.9,320,198,320,169,320C141.2,320,113,320,85,320C56.5,320,28,320,14,320L0,320Z" ></path></svg>  
-
-    <div class="background-red fw">
-
-      <a href="/collections/men">
-        <h3 class="tac text-natural ttu">Shop Now</h3>
-      </a>
-    </div>
-  </div>
-  <div class="background-purple one-third flex-container-no fdc" id="cta-shopwomen">
-    <a href="/collections/women">
-      <h1 class="tac text-dark-purple ttu nmb">Women</h1>
-    </a>
-    <svg xmlns="http://www.w3.org/2000/svg" class=""viewBox="480 55 480 220"><path fill="#66cad8" fill-opacity="1" d="M0,160L14.1,138.7C28.2,117,56,75,85,74.7C112.9,75,141,117,169,144C197.6,171,226,181,254,165.3C282.4,149,311,107,339,80C367.1,53,395,43,424,74.7C451.8,107,480,181,508,181.3C536.5,181,565,107,593,90.7C621.2,75,649,117,678,122.7C705.9,128,734,96,762,117.3C790.6,139,819,213,847,213.3C875.3,213,904,139,932,144C960,149,988,235,1016,234.7C1044.7,235,1073,149,1101,138.7C1129.4,128,1158,192,1186,197.3C1214.1,203,1242,149,1271,138.7C1298.8,128,1327,160,1355,181.3C1383.5,203,1412,213,1426,218.7L1440,224L1440,320L1425.9,320C1411.8,320,1384,320,1355,320C1327.1,320,1299,320,1271,320C1242.4,320,1214,320,1186,320C1157.6,320,1129,320,1101,320C1072.9,320,1045,320,1016,320C988.2,320,960,320,932,320C903.5,320,875,320,847,320C818.8,320,791,320,762,320C734.1,320,706,320,678,320C649.4,320,621,320,593,320C564.7,320,536,320,508,320C480,320,452,320,424,320C395.3,320,367,320,339,320C310.6,320,282,320,254,320C225.9,320,198,320,169,320C141.2,320,113,320,85,320C56.5,320,28,320,14,320L0,320Z" ></path></svg>  
-
-    <div class="background-teal fw">
-      <a href="/collections/women">
-        <h3 class="tac text-natural ttu">Shop Now</h3>
-      </a>
-    </div>
-  </div>
-  <div class="background-red one-third flex-container-no fdc">
-    <a href="/collections/kids">
-      <h1 class="tac text-dark-red ttu nmb">Kiddies</h1>
-    </a>
-    <svg xmlns="http://www.w3.org/2000/svg" class=""viewBox="960 55 480 220"><path fill="#9093c8" fill-opacity="1" d="M0,160L14.1,138.7C28.2,117,56,75,85,74.7C112.9,75,141,117,169,144C197.6,171,226,181,254,165.3C282.4,149,311,107,339,80C367.1,53,395,43,424,74.7C451.8,107,480,181,508,181.3C536.5,181,565,107,593,90.7C621.2,75,649,117,678,122.7C705.9,128,734,96,762,117.3C790.6,139,819,213,847,213.3C875.3,213,904,139,932,144C960,149,988,235,1016,234.7C1044.7,235,1073,149,1101,138.7C1129.4,128,1158,192,1186,197.3C1214.1,203,1242,149,1271,138.7C1298.8,128,1327,160,1355,181.3C1383.5,203,1412,213,1426,218.7L1440,224L1440,320L1425.9,320C1411.8,320,1384,320,1355,320C1327.1,320,1299,320,1271,320C1242.4,320,1214,320,1186,320C1157.6,320,1129,320,1101,320C1072.9,320,1045,320,1016,320C988.2,320,960,320,932,320C903.5,320,875,320,847,320C818.8,320,791,320,762,320C734.1,320,706,320,678,320C649.4,320,621,320,593,320C564.7,320,536,320,508,320C480,320,452,320,424,320C395.3,320,367,320,339,320C310.6,320,282,320,254,320C225.9,320,198,320,169,320C141.2,320,113,320,85,320C56.5,320,28,320,14,320L0,320Z" ></path></svg>  
-
-    <div class="background-purple fw">
-      <a href="/collections/kids">
-        <h3 class="tac text-natural ttu">Shop Now</h3>
-      </a>
-    </div>
-  </div>
-</section> 
-
-<script>
-  $('#our-faves .jcsa h4').click(function() {
-    $(this).addClass('actives').parents().siblings().children().removeClass('actives');
-    let currentSelection = $(this).text().toLowerCase();
-    let currentDisplay = "#" + currentSelection + "-quick"
-    $('.index-product-preview-wrapper').hide();
-    $(currentDisplay).show(); 
-  })
-</script> {%- endcomment -%}
 
 <script>on_index=true;</script>
 
@@ -475,7 +387,7 @@
 <!-- End Turn Tracking Beacon Code Do Not Remove -->
 
 <style>
-  .gendered-product-link > p {
+  .assortment-product-link > p {
     background-color: #f7f5f2;
     padding: 5px;
     border-radius: 5px;
@@ -516,7 +428,7 @@
     margin-top: -77px;
   }
   /* HOMEPAGE ATF */
-#homepage-atf-mobile, #homepage-full-assortment {
+.homepage-atf-mobile-scroll, #homepage-full-assortment {
   display: flex;
   overflow: scroll;
   white-space: nowrap;
@@ -524,25 +436,25 @@
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
-#homepage-atf-mobile::-webkit-scrollbar {
+.homepage-atf-mobile-scroll::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 #homepage-full-assortment::-webkit-scrollbar {
   width: 0;
-  height: 0;
+  height: 0 ;
 }
-#homepage-atf-mobile > div { 
+.homepage-atf-mobile-scroll > div { 
   background-size: contain;
   border-radius: 10px;
   margin: 10px;
   white-space: normal;
   max-height: 500px;
 }
-#homepage-atf-mobile > div {
+{% comment %} .homepage-atf-mobile-scroll > div {
   width: 30vw;
   height: 30vw;
-}
+} {% endcomment %}
 .assortment-product {
   margin: 5px;
   border-radius: 10px;
@@ -553,17 +465,20 @@
   background-position: bottom;
   display: flex;
   background-size: 150px;
+  padding: 15px;
 }
 .arrow-container-atf { max-height: 250px }
 @media only screen and (min-width: 800px) {
   #homepage-atf-mobile > div > div { width: 70%; }
   #homepage-atf > div > div > a > p { font-size: .9em; }
+  .assortment-product > a > h4  { font-size: 1.2vw; }
   .assortment-product > a > p  { font-size: .9em; }
   #homepage-atf-mobile { display: none }
+  #homepage-atf-desktop { display: block }
 }
 @media only screen and (max-width: 799px) {
   #homepage-atf-mobile { padding: 15px; }
-  #homepage-atf-mobile > div > div { min-width: 250px }
+  .homepage-atf-mobile-scroll > div > div { min-width: 250px }
   #homepage-atf-desktop { display: none }
   #homepage-atf-mobile { display: flex }
 }
@@ -583,18 +498,15 @@
   .assortment-product {
     min-width: 15vw;
     min-height: 15vw;
-    background-size: 120px;
+    background-size: 150px;
   }
   .arrow-container-atf { min-height: 15vw }
 }
 @media only screen and (min-width: 1280px) {
-  .assortment-product { background-size: 10vw; }
+  .assortment-product { background-size: 12vw; }
 }
 @media only screen and (min-width: 1600px) {
   #homepage-atf-mobile > div > h3 {
-    font-size: 2.2rem;
-  }
-  .assortment-txt {
     font-size: 2.2rem;
   }
 }
@@ -605,5 +517,5 @@
 } 
 .col-preview-bubble.active { background-color: white; }
 .col-preview-bubble { border: 1px solid white; }
-.homepage-atf-button { display: none }
+.homepage-atf-button, .homepage-atf-static, .homepage-atf-mobile-static  { display: none !important }
 </style>
