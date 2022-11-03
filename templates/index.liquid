@@ -73,7 +73,7 @@
   <div id="slide-3" class=" atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 3.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: none;">
     {% comment %} editorial {% endcomment %}
     <div class="homepage-atf-editorial" style="width: 50%">
-      <h3 class="ttu nm tac text-white">Bundle Up and Save</h3>
+      <h3 class="ttu nm tac text-white">Bundle Up & Save!</h3>
       <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Curated and customizable product bundles to make gifting easy</p>
       <div class="flex-container-md jcc">
         <a href="/pages/bundles" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Desktop CTA Bundles- Slide 3');"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Now</p></div></a>
@@ -116,6 +116,8 @@
 </section>
   <script>
     $(document).ready(function() {
+      $(this).css('background-color', 'rgb(160,219,227,1)')
+      $(this).children('div').children('.assortment-product-link').hide()
       if ($('.homepage-atf-editorial').css('display') !== 'none') {
       window.setInterval(function () {
         // change active slide
@@ -160,14 +162,22 @@
     {% comment %} BOX 1 {% endcomment %}
       <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Crew-Socks-Editorial.jpg' | asset_url }}); background-size: cover;">
         {% comment %} editorial {% endcomment %}
-        <div class="homepage-atf-editorial"  >
-          <h3 class="ttu nm tac text-white" style="font-size: x-large;">Crew Socks</h3>
-          <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">A sock for every occasion</p>
-          <div class="flex-container-md jes">
-            <a href="/collections/womens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Womens Socks- Tile 1');"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
-            <a href="/collections/mens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Mens Socks- Tile 1');"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
+        <div class="homepage-atf-editorial mobile"  >
+          <h3 class="ttu nm tac text-white" style="font-size: 1.8rem;">Crew Socks</h3>
+          <p class="nm tac text-white" style=" font-weight: 300; font-size: large;">A sock for every occasion</p>
+          <div>
+          <div class="flex-container-md jcc">
+            <a href="/collections/womens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Womens Socks- Tile 1');">
+              <div style="border-bottom: 2px solid white; margin: 0 20px 0 0"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed; font-size: medium">Shop Women</p></div>
+            </a>
+            <a href="/collections/mens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Mens Socks- Tile 1');">
+              <div style="border-bottom: 2px solid white; margin: 0 0 20px 0"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed; font-size: medium">Shop Men</p></div>
+            </a>
           </div>
-          <a href="/pages/bundles" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Bundles- Tile 1');"><div style="border-bottom: 2px solid white; display: flex; margin: auto; padding-top: 10px; width: fit-content"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Bundles</p></div></a>
+          <a href="/pages/bundles" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Bundles- Tile 1');">
+            <div style="border-bottom: 2px solid white; display: flex; margin: auto; width: fit-content"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed; font-size: medium">Shop Bundles</p></div>
+          </a>
+        </div>
         </div> 
         {% comment %} button {% endcomment %}
         {% comment %} <div class="homepage-atf-button ttu tac flex-container-no jcc" style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;">
@@ -178,14 +188,22 @@
       {% comment %} BOX 2 {% endcomment %}
       <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Sweaters-Editorial.jpg' | asset_url }}); background-size: cover; background-position: center; " >
         {% comment %} editorial {% endcomment %}
-        <div class="homepage-atf-editorial" >
-          <h3 class="ttu nm tac text-white" style="font-size: x-large;">Sweater Weather</h3>
-          <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Must have styles for the season</p>
-          <div class="flex-container-md jes">
-            <a href="/collections/womens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Womens Socks- Slide 2');"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
-            <a href="/collections/mens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Mens Socks- Slide 2');"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
+        <div class="homepage-atf-editorial mobile" >
+          <h3 class="ttu nm tac text-white" style="font-size: 1.8rem; padding-bottom: 10px">Sweater Weather</h3>
+          <p class="nm tac text-white" style="font-weight: 300; font-size: large;">Must have styles for the season</p>
+          <div>
+          <div class="flex-container-md jcc">
+            <a href="/collections/womens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Womens Socks- Slide 2');">
+              <div style="border-bottom: 2px solid white; margin: 0 20px 20px 0"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed; font-size: medium">Shop Women</p></div>
+            </a>
+            <a href="/collections/mens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Mens Socks- Slide 2');">
+              <div style="border-bottom: 2px solid white; margin: 0 0 20px 20px "><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed; font-size: medium">Shop Men</p></div>
+            </a>
           </div>
-          <a href="/pages/bundles" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Bundles- Slide 2');"><div style="border-bottom: 2px solid white; display: flex; margin: auto; padding-top: 10px; width: fit-content"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Bundles</p></div></a>
+          <a href="/pages/bundles" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Bundles- Slide 2');">
+            <div style="border-bottom: 2px solid white; display: flex; margin: auto; width: fit-content"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed; font-size: medium">Shop Bundles</p></div>
+          </a>
+        </div>
         </div>
         {% comment %} button {% endcomment %}
         {% comment %} <div class="homepage-atf-button ttu tac flex-container-no jcc" style="border-radius: 10px; padding: 10px; border: 2px solid white; background: rgb(255,255,255, .25); margin-bottom: 20px;" >
@@ -196,11 +214,13 @@
       {% comment %} BOX 3 {% endcomment %}
       <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Bundle-Editorial.jpg' | asset_url }}); background-size: cover; background-position: center;" >
         {% comment %} editorial {% endcomment %}
-        <div class="homepage-atf-editorial fdc jcsb" style="min-height: 127px; display: flex;">
-          <h3 class="ttu nm tac text-white" style="font-size: x-large;">Bundle Up and Save</h3>
-          <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Curated and customizable product bundles to make gifting easy</p>
+        <div class="homepage-atf-editorial mobile ">
+          <h3 class="ttu nm tac text-white" style="font-size: 1.8rem;">Bundle Up & Save!</h3>
+          <p class="nm tac text-white" style="font-weight: 300; font-size: large;">Curated and customizable product bundles to make gifting easy</p>
           <div class="flex-container-md jes">
-            <a href="/pages/bundles" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Bundles- Slide 3');"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Now</p></div></a>
+            <a href="/pages/bundles" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Editorial Mobile CTA Bundles- Slide 3');">
+              <div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed; font-size: medium;">Shop Now</p></div>
+            </a>
           </div>
         </div>
         {% comment %} button {% endcomment %}
@@ -215,11 +235,13 @@
     <div style="display: grid; place-content: center; width: 100%">
       <h2 class="nm ttu tac text-white">Alpaca Apparel</h2>
       <p class="nm tac text-white" style="padding: 15px 0;" >Softer than cashmere, warmer than wool.</p>
+      <div>
       <div style="display: flex" class="jcc">
         <a href="/collections/womens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Static Mobile CTA Womens Socks');"><div style="border-bottom: 2px solid white; margin: 0 20px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
         <a href="/collections/mens-socks" onClick="ga('send', 'event', 'Homepage', 'Viewed Collection Page', 'Static Mobile CTA Womens Socks');"><div style="border-bottom: 2px solid white; margin: 0 20px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
       </div>
       <a href="/pages/bundles"><div style="border-bottom: 2px solid white; display: flex; margin: auto; padding-top: 15px; width: fit-content"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Bundles</p></div></a>
+    </div>
   </div>
   </section>
 
@@ -283,12 +305,11 @@
 
   <script>
     // show links to men's and women's when a user hovers on a product category
-    $('.assortment-product').mouseover(function() {
+    $('.assortment-product').on("mouseover click",function() {
         $(this).css('background-color', 'rgb(160,219,227,.7)')
         $(this).children('div').children('.assortment-product-link').show()
     })
-    $('.assortment-product').mouseleave(function() {
-      $(this).css('background-color', 'rgb(160,219,227,1)')
+    $('.assortment-product').on("mouseleave click", function() {
       $(this).css('background-color', 'rgb(160,219,227,1)')
       $(this).children('div').children('.assortment-product-link').hide()
     })
@@ -538,6 +559,21 @@
 .col-preview-bubble { 
   border: 1px solid white;
   z-index: 10;
+}
+.homepage-atf-editorial.mobile {
+  min-height: 200px;
+  display: grid;
+  justify-content: center;
+}
+.homepage-atf-editorial.mobile > div { align-self: end }
+a { 
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .homepage-atf-button, .homepage-atf-static, .homepage-atf-mobile-static  { display: none !important }
 </style>
