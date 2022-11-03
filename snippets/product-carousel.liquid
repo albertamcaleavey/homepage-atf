@@ -136,24 +136,26 @@
 <script>
   $(document).ready(function() {
     let lastCarouselProduct = document.getElementById('last-carousel-product')
-    var scrollToIndex = 5
+    var scrollToIndex = 3
     $('.right-arrow').click(function() {
       $('.left-arrow').show()
-      scrollToIndex += 5
+      scrollToIndex += 4
       console.log(scrollToIndex)
       let nextCarouselProduct = Array.from($('.carousel-product'))[scrollToIndex]
       console.log(nextCarouselProduct)
-      if (scrollToIndex >= 20) {
+      if (scrollToIndex > 15) {
+        scrollToIndex = 17
         lastCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
         $(this).removeClass('clickable').css('opacity', '50%')
+      } else {
+        nextCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
       }
-      nextCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
     })
     $('.left-arrow').click(function() {
       $('.right-arrow').addClass('clickable').css('opacity', '100%')
-      let leftScrollToIndex = scrollToIndex - 10
-      console.log(leftScrollToIndex)
-      let nextCarouselProduct = Array.from($('.carousel-product'))[leftScrollToIndex]
+      scrollToIndex -= 4
+      console.log(scrollToIndex)
+      let nextCarouselProduct = Array.from($('.carousel-product'))[scrollToIndex]
       console.log(nextCarouselProduct)
       nextCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
     })
@@ -196,5 +198,9 @@
   .carousel-product > h4 { white-space: normal; }
   .arrow-container {
     height: 33rem;
+  }
+  .product-carousel::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 </style>
