@@ -1709,17 +1709,15 @@ body .shopify-cleanslate .X1znsY_r3nPaOB5sdn2C { width: 100% !important; text-al
 .tdu { text-decoration: underline; }
 .flex-container-md { display: flex }
 
-/* #slide-1.atf-slide, #slide-2.atf-slide, #slide-3.atf-slide {
-  animation-duration: 3s;
-  animation-name: slidein;
+.slide-in-slow {animation: slide-in-slow 2000ms forwards;}
+@keyframes slide-in-slow {
+  0% {transform: translateX(-100%); display: none}
+  100% {transform: translateX(0%); display: inline-block; }
 }
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-  }
-
-  to {
-    margin-left: 0%;
-  }
-} */
+.slide-out-slow {
+  animation: slide-out-slow 2000ms forwards;
+}
+@keyframes slide-out-slow {
+    0% { transform: translateX(0); display: inline-block; }
+    100% { transform: translateX(100%); display: none; }
+}

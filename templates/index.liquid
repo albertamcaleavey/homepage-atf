@@ -1,6 +1,6 @@
 <main id="index">
   {% comment %} ATF {% endcomment %}
-  <section id="homepage-atf-desktop" style="margin-bottom: 20px">
+  <section id="homepage-atf-desktop" style="margin-bottom: 20px;">
     <div class="col-preview-bubble-container homepage-atf-editorial" style="margin-bottom: -50px; display: flex; justify-content: center; padding-bottom: 20px;">
       <div id="1" class="col-preview-bubble homepage-atf-editorial clickable active" ></div>
       <div id="2" class="col-preview-bubble homepage-atf-editorial clickable" ></div>
@@ -70,7 +70,7 @@
   </div>
 
   {% comment %} SLIDE 3 {% endcomment %}
-  <div id="slide-3" class="atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 3.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: none;">
+  <div id="slide-3" class=" atf-slide flex-container-md jce aic" style="background-image: url({{ 'FW-Hero-Slide 3.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: none;">
     {% comment %} editorial {% endcomment %}
     <div class="homepage-atf-editorial" style="width: 50%">
       <h3 class="ttu nm tac text-white">Bundle Up and Save</h3>
@@ -116,31 +116,39 @@
 </section>
   <script>
     $(document).ready(function() {
-      {% comment %} window.setInterval(function () {
+      window.setInterval(function () {
         // change active slide
+        $('atf-slide').removeClass('slide-in-slow slide-out-slow')
         let currentSlide = $('#homepage-atf-desktop').children('.active')
-        let nextSlide = $('#homepage-atf-desktop').children('.active').next()
-        currentSlide.removeClass('active').hide()
+        let nextSlide = $('#homepage-atf-desktop').children('.active').next('.atf-slide')
+        currentSlide.addClass('slide-in-slow')
+        currentSlide.removeClass('active slide-in-slow')
+        setTimeout(function() {
+          currentSlide.addClass('slide-out-slow')
+        }, 1)
+        nextSlide.addClass('active slide-in-slow')
         // change active bubble
         let currentBubble = $('.col-preview-bubble-container').children('.active')
         let nextBubble = $('.col-preview-bubble-container').children('.active').next()
         currentBubble.removeClass('active')
         nextBubble.addClass('active')
         // go back to slide 1 at then end of the slides
+        console.log(currentSlide.attr('id'))
         if (currentSlide.attr('id') == 'slide-3') {
-          $('#slide-1').addClass('active').show()
+          $('#slide-1').addClass('active slide-in-slow')
           $('.col-preview-bubble#1').addClass('active')
         } else {
           nextSlide.addClass('active').show()
         }
-      }, 4000) {% endcomment %}
+      }, 4000) 
     })
     $('.col-preview-bubble').click(function() {
       $('.col-preview-bubble').removeClass('active')
       $('.atf-slide').hide().removeClass('active')
-      let selectedSlideId = $(this).attr('id')
+      let selectedSlideNum = $(this).attr('id')
+      let selectedSlideId = $('#slide-' + selectedSlideNum)
       $(this).addClass('active')
-      $('#slide-' + selectedSlideId).show().addClass('active')
+      $(selectedSlideId).show().addClass('active')
     })
   </script>
 
@@ -472,7 +480,7 @@
   #homepage-atf-mobile > div > div { width: 70%; }
   #homepage-atf > div > div > a > p { font-size: .9em; }
   .assortment-product > a > h4  { font-size: 1.2vw; }
-  .assortment-product > a > p  { font-size: .9em; }
+  .assortment-product > a > p  { font-size: .8em; }
   #homepage-atf-mobile { display: none }
   #homepage-atf-desktop { display: block }
 }
@@ -516,6 +524,9 @@
   }
 } 
 .col-preview-bubble.active { background-color: white; }
-.col-preview-bubble { border: 1px solid white; }
+.col-preview-bubble { 
+  border: 1px solid white;
+  z-index: 10;
+}
 .homepage-atf-button, .homepage-atf-static, .homepage-atf-mobile-static  { display: none !important }
 </style>
