@@ -142,7 +142,6 @@
       scrollToIndex += 4
       console.log(scrollToIndex)
       let nextCarouselProduct = Array.from($('.carousel-product'))[scrollToIndex]
-      console.log(nextCarouselProduct)
       if (scrollToIndex > 15) {
         scrollToIndex = 17
         lastCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
@@ -156,8 +155,7 @@
       scrollToIndex -= 4
       console.log(scrollToIndex)
       let nextCarouselProduct = Array.from($('.carousel-product'))[scrollToIndex]
-      console.log(nextCarouselProduct)
-      nextCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest"})
+      nextCarouselProduct.scrollIntoView({behavior: "smooth", block: "nearest", inline: "end"})
     })
   })
 </script>

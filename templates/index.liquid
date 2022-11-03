@@ -74,7 +74,7 @@
     {% comment %} editorial {% endcomment %}
     <div class="homepage-atf-editorial" style="width: 50%">
       <h3 class="ttu nm tac text-white">Bundle Up and Save</h3>
-      <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Shop our bundle collection and save up to XX%</p>
+      <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Curated and customizable product bundles to make gifting easy</p>
       <div class="flex-container-md jcc">
         <a href="/pages/bundles"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Now</p></div></a>
       </div>
@@ -101,14 +101,14 @@
 
   {% comment %} STATIC {% endcomment %}
   <div class="homepage-atf-static jcc aic" style="background-image: url({{ 'Static-Desktop.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 50vh; display: flex">
-    <div>
+    <div style="width: 50%">
       <h2 class="nm ttu tac text-white">Alpaca Apparel</h2>
-      <p class="nm tac text-white" style="padding: 15px 0">The softest alpaca lorem ipsum</p>
+      <p class="nm tac text-white" style="padding: 15px 0">Softer than cashmere, warmer than wool.</p>
       <div style="display: flex" class="jcc">
         <a href="/collections/womens-socks"><div style="border-bottom: 2px solid white; margin-right: 30px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
         <a href="/collections/mens-socks"><div style="border-bottom: 2px solid white; margin-left: 30px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
       </div>
-      <a href="/pages/bundles"><div style="border-bottom: 2px solid white; display: flex; margin: auto; padding-top: 15px; width: fit-content"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Bundles</p></div></a>
+      <a href="/pages/bundles"><div style="border-bottom: 2px solid white; display: flex; margin: auto; padding-top: 30px; width: fit-content"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Bundles</p></div></a>
     <div>
   </div>
 
@@ -156,9 +156,9 @@
   <section id="homepage-atf-mobile" class="accent-padding" style="padding-top 0; padding-bottom: 0;">
     <div class="homepage-atf-mobile-scroll">
     {% comment %} BOX 1 {% endcomment %}
-      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'HP-D-ATF-Bundle-model.jpg' | asset_url }}); background-size: cover; background-position: center;">
+      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Crew-Socks-Editorial.jpg' | asset_url }}); background-size: cover;">
         {% comment %} editorial {% endcomment %}
-        <div class="homepage-atf-editorial" >
+        <div class="homepage-atf-editorial fdc jcsb" style="display: flex; min-height: 112px;" >
           <h3 class="ttu nm tac text-white" style="font-size: x-large;">Crew Socks</h3>
           <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">A sock for every occasion</p>
           <div class="flex-container-md jes">
@@ -173,9 +173,9 @@
       </div>
       
       {% comment %} BOX 2 {% endcomment %}
-      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Crew-Socks.jpg' | asset_url }}); background-size: cover" >
+      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Bundle-Editorial.jpg' | asset_url }}); background-size: cover; background-position: center; " >
         {% comment %} editorial {% endcomment %}
-        <div class="homepage-atf-editorial" >
+        <div class="homepage-atf-editorial fdc jcsb" style="display: flex; min-height: 112px;">
           <h3 class="ttu nm tac text-white" style="font-size: x-large;">Sweater Weather</h3>
           <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Must have styles for the season</p>
           <div class="flex-container-md jes">
@@ -190,11 +190,11 @@
       </div>
 
       {% comment %} BOX 3 {% endcomment %}
-      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'ATF-Sweaters.jpg' | asset_url }}); background-size: cover; background-position: center;" >
+      <div class="double-accent-padding flex-container-no fdc jce" style="background-image: url({{ 'M-ATF-Sweaters-Editorial.jpg' | asset_url }}); background-size: cover; background-position: center;" >
         {% comment %} editorial {% endcomment %}
         <div class="homepage-atf-editorial" >
           <h3 class="ttu nm tac text-white" style="font-size: x-large;">Bundle Up and Save</h3>
-          <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Shop our bundle collection and save up to XX%</p>
+          <p class="nm tac text-white" style="padding: 5px 0 20px 0; font-weight: 300">Curated and customizable product bundles to make gifting easy</p>
           <div class="flex-container-md jes">
             <a href="/pages/bundles"><div style="border-bottom: 2px solid white;"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Now</p></div></a>
           </div>
@@ -207,10 +207,10 @@
   </div>
 
   {% comment %} MOBILE STATIC {% endcomment %}
-  <div class="homepage-atf-mobile-static wfa" style="background-image: url({{ 'M-Static-Hero.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 85vh; display: flex; margin-top: 10px; border-radius: 10px">
+  <div class="homepage-atf-mobile-static wfa" style="background-image: url({{ 'M-Static-Hero-300x400.jpg' | asset_img_url: 'master' }}); background-size: cover; height: 60vh; display: flex; margin-top: 10px; border-radius: 10px; background-position: center;">
     <div style="display: grid; place-content: center; width: 100%">
       <h2 class="nm ttu tac text-white">Alpaca Apparel</h2>
-      <p class="nm tac text-white" style="padding: 15px 0">The softest alpaca lorem ipsum</p>
+      <p class="nm tac text-white" >Softer than cashmere, warmer than wool.</p>
       <div style="display: flex" class="jcc">
         <a href="/collections/womens-socks"><div style="border-bottom: 2px solid white; margin: 0 20px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Women</p></div></a>
         <a href="/collections/mens-socks"><div style="border-bottom: 2px solid white; margin: 0 20px"><p class="ttu nm tac text-white" style="font-family: Avenir-Next-Condensed">Shop Men</p></div></a>
@@ -225,47 +225,47 @@
       <div class="arrow-container-atf flex-container-no" style="position: absolute; left: 15px;">
         <img class="left-arrow-atf clickable" src="{{ "left-arrow.png" | asset_url }}" loading="lazy" style="height: 75px; display: none" >
       </div>
-      <div id="first-assortment-product" class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WCrew.png' | asset_url }});">
+      <div id="first-assortment-product" class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WCrew.png' | asset_url }}); background-position: center">
         <a href="/collections/womens-crew" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">Crew Socks</h4></a>
         <div>
           <a href="/collections/womens-crew" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
           <a href="/collections/mens-crew" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
         </div>
       </div>
-      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-LC.png' | asset_url }})">
+      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-LC.png' | asset_url }}); background-position: center">
         <a href="/collections/womens-low-cut" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">Low Cut Socks</h4></a>
         <div>
           <a href="/collections/womens-low-cut" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
           <a href="/collections/mens-low-cut" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
         </div>
       </div>
-      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-compression.png' | asset_url }})">
+      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-compression.png' | asset_url }}); background-position: bottom;">
         <a href="/collections/womens-compression" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">Compression Socks</h4></a>
         <div>
           <a href="/collections/womens-compression" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
           <a href="/collections/mens-compression" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
         </div>
       </div>
-      <div class="background-light-teal assortment-product" style="background-image: url({{ 'Assortment-No-Show.png' | asset_url }})">
+      <div class="background-light-teal assortment-product" style="background-image: url({{ 'Assortment-No-Show.png' | asset_url }}); background-position: center;">
         <a href="/collections/womens-no-show" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">No Show Socks</h4></a>
         <div>
           <a href="/collections/womens-no-show" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
         </div>
       </div>
-      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WSweaters.png' | asset_url }})">
+      <div class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WSweaters.png' | asset_url }}); background-position: center;">
         <a href="/collections/womens-sweaters" class="assortment-product-title"><h4 class="nm gendered-category ttu" style="font-weight: 100;">Sweaters</h4></a>
         <div>
           <a href="/collections/womens-sweaters" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
           <a href="/collections/mens-sweaters" class="assortment-product-link" style="display: none"><p class="nm tac">Shop Men's</p></a>
         </div>
       </div>
-      <div class="background-light-teal assortment-product" style="background-image: url({{ 'Assortment-Throws.png' | asset_url }})">
+      <div class="background-light-teal assortment-product" style="background-image: url({{ 'Assortment-Throws.png' | asset_url }}); background-position: bottom;">
         <a href="/collections/throw-blankets" class="assortment-product-title"><h4 class="nm ttu" style="font-weight: 100;">Throw Blankets</h4></a>
         <div>
           <a href="/collections/throw-blankets" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop All</p></a>
         </div>
       </div>
-      <div id="last-assortment-product" class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WScarves.png' | asset_url }})">
+      <div id="last-assortment-product" class="background-light-teal assortment-product gendered" style="background-image: url({{ 'Assortment-WScarves.png' | asset_url }}); background-position: center;">
         <a href="/collections/womens-scarves" class="assortment-product-title"><h4 class="nm gendered-category ttu" style="font-weight: 100;">Scarves</h4></a>
         <div>
           <a href="/collections/womens-scarves" class="assortment-product-link" style="display: none; margin-bottom: 10px"><p class="nm tac">Shop Women's</p></a>
@@ -443,10 +443,14 @@
 .homepage-atf-mobile-scroll::-webkit-scrollbar {
   width: 0;
   height: 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 #homepage-full-assortment::-webkit-scrollbar {
-  width: 0;
-  height: 0 ;
+  width: 0 !important;
+  height: 0 !important;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 .homepage-atf-mobile-scroll > div { 
   background-size: contain;
@@ -462,10 +466,9 @@
   max-width: 150px;
   max-height: 150px;
   background-repeat: no-repeat;
-  background-position: bottom;
   display: flex;
   background-size: 150px;
-  padding: 15px;
+  padding: 7px 7px 7px 9px;
   flex-direction: column;
 }
 .assortment-product > div {
@@ -474,12 +477,13 @@
   flex-direction: column;
   place-content: center;
 }
+.assortment-product > a > h4  { color: white; }
 .assortment-product-link { width: 100% }
 .arrow-container-atf { max-height: 250px }
 @media only screen and (min-width: 800px) {
   #homepage-atf-mobile > div > div { width: 70%; }
   #homepage-atf > div > div > a > p { font-size: .9em; }
-  .assortment-product > a > h4  { font-size: 1.2vw; }
+  .assortment-product > a > h4  { font-size: 1vw; }
   .assortment-product > div > a > p  { font-size: .8em; }
   #homepage-atf-mobile { display: none }
   #homepage-atf-desktop { display: block }
@@ -490,6 +494,8 @@
   #homepage-atf-desktop { display: none }
   #homepage-atf-mobile { display: flex }
   .arrow-container, .right-arrow-atf { display: none !important }
+  .assortment-product { padding: 5px; }
+  .assortment-product > a > h4  { font-size: .9rem;; }
 }
 @media only screen and (max-width: 1079px) {
   #homepage-atf-mobile > div {
@@ -529,5 +535,5 @@
   border: 1px solid white;
   z-index: 10;
 }
-.homepage-atf-button, .homepage-atf-editorial, .atf-slide, .homepage-atf-mobile-scroll  { display: none !important }
+.homepage-atf-button, .homepage-atf-static, .homepage-atf-mobile-static  { display: none !important }
 </style>
